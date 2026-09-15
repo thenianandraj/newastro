@@ -1,0 +1,69 @@
+# =========================
+# WordPress secrets / local
+# =========================
+/wp-config.php
+/wp-config.php.*
+/wp-config.php123
+/info.php
+
+# =========================
+# Uploads, cache, backups
+# =========================
+/wp-content/uploads/
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/upgrade-temp-backup/
+/wp-content/backup*/
+/wp-content/backups/
+/wp-content/ai1wm-backups/
+/wp-content/updraft/
+/wp-content/litespeed/
+/wp-content/w3tc-config/
+/wp-content/maintenance/
+/wp-content/webtoffee_import/
+/wp-content/webtoffee_iew_log/
+/wp-content/debug.log
+/wp-content/*.log
+
+# Theme zip / old copies
+/wp-content/themes/*.zip
+/wp-content/aasana-2025/
+
+# Static extra copy (not needed in repo)
+/astro-master/
+
+# =========================
+# Logs, dumps, archives
+# =========================
+*.log
+*.sql
+*.sql.gz
+*.wpress
+error_log
+
+# =========================
+# Server / env leftovers (root only)
+# =========================
+/.htaccess
+/htaccess-*
+/htaccess.*
+/index.html-back
+*.bak
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Sitemap is generated
+/sitemap.xml
+/sitemap.xml.gz

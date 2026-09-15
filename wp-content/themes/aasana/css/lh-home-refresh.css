@@ -1,0 +1,211 @@
+/* Homepage hero + neat alignment. Content in WP pages is unchanged. */
+
+body.home,
+body.home .page_content,
+body.home .page_content main,
+body.home .wpb-content-wrapper {
+	background-color: #000b1e !important;
+	background-image: none !important;
+}
+
+body.home {
+	background: linear-gradient(180deg, #000814 0%, #000b1e 45%, #020d22 100%) !important;
+}
+
+/* Hide theme chrome + old banner slider only */
+body.home .header_box.bg_page_header,
+body.home .page_title,
+body.home .ce_title .title-separators,
+body.home .ce_title.und-title .title:before,
+body.home .ce_title.und-title .title:after,
+body.home #n2-ss-2,
+body.home #n2-ss-2-align,
+body.home .n2-ss-slider,
+body.home .n2-section-smartslider,
+body.home .n2-ss-align,
+body.home ss3-force-full-width,
+body.home .rev_slider_wrapper,
+body.home .rev_slider,
+body.home .cws_slider_container,
+body.home .fs_img_header {
+	display: none !important;
+	height: 0 !important;
+	min-height: 0 !important;
+	overflow: hidden !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	visibility: hidden !important;
+	pointer-events: none !important;
+}
+
+body.home #main.site-main {
+	margin-top: 0 !important;
+	padding-top: 0 !important;
+}
+
+body.home .page_content > .container {
+	max-width: 1180px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 24px;
+	padding-right: 24px;
+}
+
+/* ---- Hero ---- */
+body.home .lh-home-hero {
+	--lh-hero-gold: #f0d35a;
+	--lh-hero-ink: #fff8e7;
+	--lh-header-h: 72px;
+	position: relative;
+	display: block;
+	width: 100%;
+	height: clamp(480px, calc(100vh - var(--lh-header-h)), 860px);
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	isolation: isolate;
+	background: #0a0610;
+	box-sizing: border-box;
+}
+
+body.home .lh-home-hero__media {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	overflow: hidden;
+}
+
+body.home .lh-home-hero__img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 78% 28%;
+}
+
+body.home .lh-home-hero__shade {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	pointer-events: none;
+	background:
+		linear-gradient(
+			90deg,
+			rgba(6, 3, 12, 0.72) 0%,
+			rgba(6, 3, 12, 0.42) 38%,
+			rgba(6, 3, 12, 0.08) 64%,
+			rgba(6, 3, 12, 0.02) 100%
+		);
+}
+
+body.home .lh-home-hero__inner {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	max-width: 1320px;
+	height: 100%;
+	margin: 0 auto;
+	padding: clamp(28px, 4vw, 48px) 24px;
+	box-sizing: border-box;
+}
+
+body.home .lh-home-hero__copy {
+	max-width: min(520px, 92%);
+	text-align: left;
+	color: var(--lh-hero-ink);
+}
+
+body.home .lh-home-hero__brand {
+	margin: 0 0 12px;
+	font-family: 'Cormorant Garamond', Georgia, serif;
+	font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	color: var(--lh-hero-gold);
+}
+
+body.home .lh-home-hero__title {
+	margin: 0 0 14px;
+	font-family: 'Cormorant Garamond', Georgia, serif;
+	font-size: clamp(2.2rem, 5vw, 3.6rem);
+	font-weight: 700;
+	line-height: 1.08;
+	color: #fffaf0;
+	text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.home .lh-home-hero__text {
+	margin: 0 0 24px;
+	max-width: 36ch;
+	font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+	font-size: clamp(1.02rem, 1.8vw, 1.18rem);
+	font-weight: 600;
+	line-height: 1.5;
+	color: rgba(255, 248, 231, 0.92);
+}
+
+body.home .lh-home-hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	align-items: center;
+}
+
+body.home .lh-home-hero__btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 46px;
+	padding: 0 22px;
+	border-radius: 999px;
+	font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+	font-size: 0.95rem;
+	font-weight: 700;
+	text-decoration: none !important;
+	box-sizing: border-box;
+}
+
+body.home .lh-home-hero__btn--primary {
+	background: linear-gradient(135deg, #f0d35a 0%, #e0a825 100%);
+	color: #1a1208 !important;
+	border: 1px solid rgba(255, 220, 120, 0.85);
+}
+
+body.home .lh-home-hero__btn--whatsapp {
+	background: rgba(255, 255, 255, 0.08);
+	color: #fffaf0 !important;
+	border: 1px solid rgba(255, 248, 231, 0.45);
+}
+
+body.home .lh-home-hero__btn:hover {
+	transform: translateY(-2px);
+}
+
+/* Middle sections: style only. Content stays visible. */
+body.home .page_content main > .vc_row,
+body.home .page_content main > .row_bg {
+	padding-top: 36px;
+	padding-bottom: 36px;
+}
+
+@media (max-width: 767px) {
+	body.home .lh-home-hero {
+		height: auto;
+		min-height: 560px;
+	}
+
+	body.home .lh-home-hero__img {
+		object-position: 88% 20%;
+	}
+
+	body.home .lh-home-hero__inner {
+		align-items: flex-end;
+		padding-bottom: 36px;
+	}
+
+	body.home .lh-home-hero__copy {
+		max-width: 100%;
+	}
+}

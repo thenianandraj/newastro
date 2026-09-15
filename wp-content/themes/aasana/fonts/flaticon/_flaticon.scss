@@ -1,0 +1,233 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 22/08/2017 09:22
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-people-8:before { content: "\f100"; }
+.flaticon-woman:before { content: "\f101"; }
+.flaticon-people-7:before { content: "\f102"; }
+.flaticon-people-6:before { content: "\f103"; }
+.flaticon-sports-4:before { content: "\f104"; }
+.flaticon-art:before { content: "\f105"; }
+.flaticon-signs:before { content: "\f106"; }
+.flaticon-people-5:before { content: "\f107"; }
+.flaticon-interface:before { content: "\f108"; }
+.flaticon-people-4:before { content: "\f109"; }
+.flaticon-people-3:before { content: "\f10a"; }
+.flaticon-hat:before { content: "\f10b"; }
+.flaticon-avatar:before { content: "\f10c"; }
+.flaticon-game:before { content: "\f10d"; }
+.flaticon-sport-1:before { content: "\f10e"; }
+.flaticon-fruit-1:before { content: "\f10f"; }
+.flaticon-medical-1:before { content: "\f110"; }
+.flaticon-drink:before { content: "\f111"; }
+.flaticon-fruit:before { content: "\f112"; }
+.flaticon-food-1:before { content: "\f113"; }
+.flaticon-fruits:before { content: "\f114"; }
+.flaticon-food:before { content: "\f115"; }
+.flaticon-gym-12:before { content: "\f116"; }
+.flaticon-sport:before { content: "\f117"; }
+.flaticon-gym-11:before { content: "\f118"; }
+.flaticon-gym-10:before { content: "\f119"; }
+.flaticon-gym-9:before { content: "\f11a"; }
+.flaticon-exercise-2:before { content: "\f11b"; }
+.flaticon-gym-8:before { content: "\f11c"; }
+.flaticon-time:before { content: "\f11d"; }
+.flaticon-exercise-1:before { content: "\f11e"; }
+.flaticon-gym-7:before { content: "\f11f"; }
+.flaticon-gym-6:before { content: "\f120"; }
+.flaticon-tool-1:before { content: "\f121"; }
+.flaticon-gym-5:before { content: "\f122"; }
+.flaticon-transport:before { content: "\f123"; }
+.flaticon-circle:before { content: "\f124"; }
+.flaticon-multimedia:before { content: "\f125"; }
+.flaticon-arrows-1:before { content: "\f126"; }
+.flaticon-increase-size-option:before { content: "\f127"; }
+.flaticon-plus-button:before { content: "\f128"; }
+.flaticon-right-arrow-circular-button:before { content: "\f129"; }
+.flaticon-arrows:before { content: "\f12a"; }
+.flaticon-social-media-1:before { content: "\f12b"; }
+.flaticon-social-media:before { content: "\f12c"; }
+.flaticon-symbols:before { content: "\f12d"; }
+.flaticon-social-3:before { content: "\f12e"; }
+.flaticon-social-2:before { content: "\f12f"; }
+.flaticon-social-1:before { content: "\f130"; }
+.flaticon-social:before { content: "\f131"; }
+.flaticon-quote-left:before { content: "\f132"; }
+.flaticon-link-symbol:before { content: "\f133"; }
+.flaticon-coach:before { content: "\f134"; }
+.flaticon-people-2:before { content: "\f135"; }
+.flaticon-sports-3:before { content: "\f136"; }
+.flaticon-technology:before { content: "\f137"; }
+.flaticon-tool:before { content: "\f138"; }
+.flaticon-gym-4:before { content: "\f139"; }
+.flaticon-shapes-1:before { content: "\f13a"; }
+.flaticon-smart:before { content: "\f13b"; }
+.flaticon-knife:before { content: "\f13c"; }
+.flaticon-sports-2:before { content: "\f13d"; }
+.flaticon-gym-3:before { content: "\f13e"; }
+.flaticon-healthy-1:before { content: "\f13f"; }
+.flaticon-gym-2:before { content: "\f140"; }
+.flaticon-health:before { content: "\f141"; }
+.flaticon-two:before { content: "\f142"; }
+.flaticon-cup:before { content: "\f143"; }
+.flaticon-gym-1:before { content: "\f144"; }
+.flaticon-exercise:before { content: "\f145"; }
+.flaticon-shapes:before { content: "\f146"; }
+.flaticon-gym:before { content: "\f147"; }
+.flaticon-healthy:before { content: "\f148"; }
+.flaticon-people-1:before { content: "\f149"; }
+.flaticon-medical:before { content: "\f14a"; }
+.flaticon-sports-1:before { content: "\f14b"; }
+.flaticon-people:before { content: "\f14c"; }
+.flaticon-nature:before { content: "\f14d"; }
+.flaticon-yoga-position:before { content: "\f14e"; }
+.flaticon-lotus-1:before { content: "\f14f"; }
+.flaticon-gymnast-girl:before { content: "\f150"; }
+.flaticon-yoga-2:before { content: "\f151"; }
+.flaticon-chakra:before { content: "\f152"; }
+.flaticon-om:before { content: "\f153"; }
+.flaticon-yoga-1:before { content: "\f154"; }
+.flaticon-yoga-mat-1:before { content: "\f155"; }
+.flaticon-yoga-mat:before { content: "\f156"; }
+.flaticon-meditation:before { content: "\f157"; }
+.flaticon-yoga:before { content: "\f158"; }
+.flaticon-lotus:before { content: "\f159"; }
+.flaticon-buddhist-yoga-pose:before { content: "\f15a"; }
+.flaticon-sports:before { content: "\f15b"; }
+.flaticon-left-arrow:before { content: "\f15c"; }
+.flaticon-arrows-2:before { content: "\f15d"; }
+.flaticon-search:before { content: "\f15e"; }
+.flaticon-business:before { content: "\f15f"; }
+.flaticon-internet:before { content: "\f160"; }
+    
+    $font-Flaticon-people-8: "\f100";
+    $font-Flaticon-woman: "\f101";
+    $font-Flaticon-people-7: "\f102";
+    $font-Flaticon-people-6: "\f103";
+    $font-Flaticon-sports-4: "\f104";
+    $font-Flaticon-art: "\f105";
+    $font-Flaticon-signs: "\f106";
+    $font-Flaticon-people-5: "\f107";
+    $font-Flaticon-interface: "\f108";
+    $font-Flaticon-people-4: "\f109";
+    $font-Flaticon-people-3: "\f10a";
+    $font-Flaticon-hat: "\f10b";
+    $font-Flaticon-avatar: "\f10c";
+    $font-Flaticon-game: "\f10d";
+    $font-Flaticon-sport-1: "\f10e";
+    $font-Flaticon-fruit-1: "\f10f";
+    $font-Flaticon-medical-1: "\f110";
+    $font-Flaticon-drink: "\f111";
+    $font-Flaticon-fruit: "\f112";
+    $font-Flaticon-food-1: "\f113";
+    $font-Flaticon-fruits: "\f114";
+    $font-Flaticon-food: "\f115";
+    $font-Flaticon-gym-12: "\f116";
+    $font-Flaticon-sport: "\f117";
+    $font-Flaticon-gym-11: "\f118";
+    $font-Flaticon-gym-10: "\f119";
+    $font-Flaticon-gym-9: "\f11a";
+    $font-Flaticon-exercise-2: "\f11b";
+    $font-Flaticon-gym-8: "\f11c";
+    $font-Flaticon-time: "\f11d";
+    $font-Flaticon-exercise-1: "\f11e";
+    $font-Flaticon-gym-7: "\f11f";
+    $font-Flaticon-gym-6: "\f120";
+    $font-Flaticon-tool-1: "\f121";
+    $font-Flaticon-gym-5: "\f122";
+    $font-Flaticon-transport: "\f123";
+    $font-Flaticon-circle: "\f124";
+    $font-Flaticon-multimedia: "\f125";
+    $font-Flaticon-arrows-1: "\f126";
+    $font-Flaticon-increase-size-option: "\f127";
+    $font-Flaticon-plus-button: "\f128";
+    $font-Flaticon-right-arrow-circular-button: "\f129";
+    $font-Flaticon-arrows: "\f12a";
+    $font-Flaticon-social-media-1: "\f12b";
+    $font-Flaticon-social-media: "\f12c";
+    $font-Flaticon-symbols: "\f12d";
+    $font-Flaticon-social-3: "\f12e";
+    $font-Flaticon-social-2: "\f12f";
+    $font-Flaticon-social-1: "\f130";
+    $font-Flaticon-social: "\f131";
+    $font-Flaticon-quote-left: "\f132";
+    $font-Flaticon-link-symbol: "\f133";
+    $font-Flaticon-coach: "\f134";
+    $font-Flaticon-people-2: "\f135";
+    $font-Flaticon-sports-3: "\f136";
+    $font-Flaticon-technology: "\f137";
+    $font-Flaticon-tool: "\f138";
+    $font-Flaticon-gym-4: "\f139";
+    $font-Flaticon-shapes-1: "\f13a";
+    $font-Flaticon-smart: "\f13b";
+    $font-Flaticon-knife: "\f13c";
+    $font-Flaticon-sports-2: "\f13d";
+    $font-Flaticon-gym-3: "\f13e";
+    $font-Flaticon-healthy-1: "\f13f";
+    $font-Flaticon-gym-2: "\f140";
+    $font-Flaticon-health: "\f141";
+    $font-Flaticon-two: "\f142";
+    $font-Flaticon-cup: "\f143";
+    $font-Flaticon-gym-1: "\f144";
+    $font-Flaticon-exercise: "\f145";
+    $font-Flaticon-shapes: "\f146";
+    $font-Flaticon-gym: "\f147";
+    $font-Flaticon-healthy: "\f148";
+    $font-Flaticon-people-1: "\f149";
+    $font-Flaticon-medical: "\f14a";
+    $font-Flaticon-sports-1: "\f14b";
+    $font-Flaticon-people: "\f14c";
+    $font-Flaticon-nature: "\f14d";
+    $font-Flaticon-yoga-position: "\f14e";
+    $font-Flaticon-lotus-1: "\f14f";
+    $font-Flaticon-gymnast-girl: "\f150";
+    $font-Flaticon-yoga-2: "\f151";
+    $font-Flaticon-chakra: "\f152";
+    $font-Flaticon-om: "\f153";
+    $font-Flaticon-yoga-1: "\f154";
+    $font-Flaticon-yoga-mat-1: "\f155";
+    $font-Flaticon-yoga-mat: "\f156";
+    $font-Flaticon-meditation: "\f157";
+    $font-Flaticon-yoga: "\f158";
+    $font-Flaticon-lotus: "\f159";
+    $font-Flaticon-buddhist-yoga-pose: "\f15a";
+    $font-Flaticon-sports: "\f15b";
+    $font-Flaticon-left-arrow: "\f15c";
+    $font-Flaticon-arrows-2: "\f15d";
+    $font-Flaticon-search: "\f15e";
+    $font-Flaticon-business: "\f15f";
+    $font-Flaticon-internet: "\f160";

@@ -1,0 +1,182 @@
+/* Our Services — same approach as Why Trust Us. Existing cards/text stay. */
+
+body.home .lh-our-services-head,
+body.home .lh-our-services-grid,
+body.home #our-services {
+	width: 100% !important;
+	max-width: 100% !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	background: #ffffff !important;
+	background-image: none !important;
+}
+
+body.home .lh-our-services-head {
+	padding: clamp(36px, 5vw, 56px) clamp(16px, 3vw, 28px) 8px !important;
+}
+
+body.home .lh-our-services-grid,
+body.home #our-services {
+	padding: 12px clamp(16px, 3vw, 28px) clamp(48px, 6vw, 72px) !important;
+}
+
+body.home .lh-our-services {
+	max-width: 1180px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+body.home .lh-our-services .cws_separator_icon,
+body.home .lh-our-services .cws_textmodule_icon,
+body.home .lh-our-services .flaticon-gym-5 {
+	display: none !important;
+}
+
+body.home .lh-our-services .cws_textmodule_icon_wrapper {
+	display: flex !important;
+	justify-content: center;
+	margin: 0 auto 12px !important;
+}
+
+body.home .lh-our-services .cws_textmodule_icon_wrapper::before {
+	content: "ॐ";
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	border: 1.5px solid #d4af37;
+	color: #d4af37;
+	font-family: "Cormorant Garamond", Georgia, serif;
+	font-size: 1.35rem;
+	line-height: 1;
+	box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+}
+
+body.home .lh-our-services .widgettitle,
+body.home .lh-our-services .widgettitle span {
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	gap: 14px;
+	margin: 0 0 14px !important;
+	font-family: "Cormorant Garamond", Georgia, serif !important;
+	font-size: clamp(1.85rem, 3.8vw, 2.55rem) !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.06em !important;
+	text-transform: uppercase !important;
+	color: #000b1e !important;
+	background: none !important;
+	word-spacing: normal !important;
+}
+
+body.home .lh-our-services .widgettitle::before,
+body.home .lh-our-services .widgettitle::after {
+	content: "";
+	width: clamp(28px, 5vw, 48px);
+	height: 1px;
+	background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+body.home .lh-our-services .cws_textmodule_content,
+body.home .lh-our-services .cws_textmodule_content p {
+	max-width: 760px;
+	margin: 0 auto !important;
+	text-align: center !important;
+	font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif !important;
+	font-size: clamp(0.92rem, 1.5vw, 1.02rem) !important;
+	line-height: 1.6 !important;
+	color: #5a6578 !important;
+	word-spacing: normal !important;
+	letter-spacing: normal !important;
+}
+
+body.home .lh-our-services-grid,
+body.home #our-services {
+	display: flex !important;
+	flex-wrap: wrap !important;
+	justify-content: center !important;
+	gap: 18px !important;
+	align-items: stretch !important;
+}
+
+body.home .lh-our-services-grid > .wpb_column,
+body.home .lh-our-services-grid .vc_column_container.vc_col-sm-3,
+body.home .lh-our-services-grid .vc_column_container.vc_col-sm-4,
+body.home .lh-our-services-grid .vc_column_container.vc_col-sm-2 {
+	float: none !important;
+	width: 180px !important;
+	max-width: 200px !important;
+	flex: 0 1 180px !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+body.home .lh-our-services-grid .vc_column-inner,
+body.home .lh-our-services-grid .wpb_wrapper {
+	display: flex !important;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	padding: 20px 12px 18px !important;
+	border: 1px solid rgba(11, 31, 77, 0.08) !important;
+	border-radius: 16px !important;
+	background: #ffffff !important;
+	box-shadow: 0 8px 24px rgba(11, 31, 77, 0.06);
+	text-align: center;
+	box-sizing: border-box;
+}
+
+body.home .lh-our-services-grid .vc_column-inner:hover {
+	transform: translateY(-4px);
+	border-color: rgba(212, 175, 55, 0.45) !important;
+	box-shadow: 0 16px 36px rgba(11, 31, 77, 0.12);
+}
+
+body.home .lh-our-services-grid .wpb_single_image,
+body.home .lh-our-services-grid figure,
+body.home .lh-our-services-grid .vc_single_image-wrapper {
+	background: transparent !important;
+	border: 0 !important;
+	margin: 0 0 12px !important;
+	padding: 0 !important;
+}
+
+body.home .lh-our-services-grid img {
+	width: 72px !important;
+	height: 72px !important;
+	object-fit: contain !important;
+	margin: 0 auto !important;
+	border-radius: 50% !important;
+	background: linear-gradient(160deg, #0b1f4d 0%, #000b1e 100%);
+	padding: 14px !important;
+	box-sizing: border-box;
+}
+
+body.home .lh-our-services-grid .wpb_text_column,
+body.home .lh-our-services-grid .wpb_text_column p,
+body.home .lh-our-services-grid .widgettitle,
+body.home .lh-our-services-grid a {
+	color: #000b1e !important;
+	font-family: "Source Sans 3", "Segoe UI", sans-serif !important;
+	font-size: 0.92rem !important;
+	font-weight: 700 !important;
+	line-height: 1.35 !important;
+	text-align: center !important;
+	word-spacing: normal !important;
+	background: none !important;
+}
+
+body.home .lh-our-services-grid a:hover {
+	color: #d4af37 !important;
+}
+
+@media (max-width: 760px) {
+	body.home .lh-our-services-grid > .wpb_column,
+	body.home .lh-our-services-grid .vc_column_container.vc_col-sm-3 {
+		width: 46% !important;
+		max-width: 46% !important;
+		flex: 1 1 46% !important;
+	}
+}

@@ -1,0 +1,80 @@
+/*------------------------------------------------------------------
+
+[Table of contents]
+
+* CWS MEGAMENU
+	** cws megamenu + composer
+* MOBILE HEADER
+	** MOBILE MEGAMENU
+		*** MOBILE MEGAMENU MENU WIDGET
+
+-------------------------------------------------------------------*/
+/**************
+* CWS MEGAMENU
+**************/
+
+.cws_megamenu_item [data-vc-full-width="true"] {
+    right: auto !important;
+	left: auto;
+}
+
+.main_menu .sub-menu .menu-item.menu-item-object-megamenu_item > span {
+    padding-left: 0;
+	padding-right: 25px;
+}
+
+.main_menu .cws_megamenu_item .wpb_wrapper.active > .megamenu_item_column_title > .pointer {
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+.cws_megamenu_item .widget.widget_nav_menu .pointer:before{
+    content: "\f104";   
+}
+.cws_megamenu_item .widget.widget_nav_menu .menu-item{
+    padding-right: 10px;
+	padding-left: 0;
+}
+.main_menu .menu-item.right .cws_megamenu_item .widget.widget_nav_menu .menu-item.menu-item-has-children > a,
+.main_menu .menu-item.right .cws_megamenu_item .widget.widget_nav_menu .menu-item.menu-item-has-children > span{
+    padding: 0;
+}
+
+/***************
+* \CWS MEGAMENU
+***************/
+/*****************
+** MOBILE MEGAMENU
+*****************/
+
+#mobile_header .cws_megamenu_item .megamenu_item_column_title .pointer {
+    left: 0;
+	right: auto;
+}
+
+#mobile_menu .cws_megamenu_item > .vc_row > .vc_column_container:first-child > .vc_column-inner:before,
+#mobile_menu .megamenu_item_column_content:before,
+#mobile_menu .cws_megamenu_item .vc_column-inner:after {
+    left: 0;
+	right: auto;
+}
+
+/******************************
+*** MOBILE MEGAMENU MENU WIDGET
+******************************/
+
+#mobile_menu .cws_megamenu_item .widget.widget_nav_menu {
+    padding-right: 16px;
+	padding-left: 0;
+}
+
+#mobile_menu .sub-menu .widget_nav_menu .menu-item:first-of-type:before {
+    right: 0;
+    left: auto;
+}
+
+/*******************************
+*** \MOBILE MEGAMENU MENU WIDGET
+*******************************/
+
+/* Made by the RTL-er.com - http://www.rtl-er.com */

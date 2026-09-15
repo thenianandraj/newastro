@@ -1,0 +1,289 @@
+/* Our Videos + FAQs. Existing videos and questions stay. */
+
+body.home .lh-videos,
+body.home .lh-faqs,
+body.home .cws_textmodule.lh-videos,
+body.home .cws_textmodule.lh-faqs {
+	display: block !important;
+	width: 100% !important;
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: clamp(28px, 4vw, 40px) clamp(16px, 3vw, 28px) 12px;
+	text-align: center;
+	background: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
+}
+
+body.home .lh-videos .cws_textmodule_icon_wrapper,
+body.home .lh-videos .cws_separator_icon,
+body.home .lh-videos .cws_textmodule_icon,
+body.home .lh-faqs .cws_textmodule_icon_wrapper,
+body.home .lh-faqs .cws_separator_icon,
+body.home .lh-faqs .cws_textmodule_icon,
+body.home .lh-videos .flaticon-gym-5,
+body.home .lh-faqs .flaticon-gym-5 {
+	display: none !important;
+}
+
+body.home .lh-videos .cws_textmodule_titles,
+body.home .lh-faqs .cws_textmodule_titles {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+body.home .lh-videos .cws_textmodule_titles::before,
+body.home .lh-faqs .cws_textmodule_titles::before {
+	content: "ॐ";
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	border: 1.5px solid #d4af37;
+	color: #d4af37;
+	font-family: "Cormorant Garamond", Georgia, serif;
+	font-size: 1.25rem;
+	line-height: 1;
+	box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+}
+
+body.home .lh-videos .widgettitle,
+body.home .lh-videos .widgettitle span,
+body.home .lh-faqs .widgettitle,
+body.home .lh-faqs .widgettitle span {
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	gap: 14px;
+	margin: 0 !important;
+	font-family: "Cormorant Garamond", Georgia, serif !important;
+	font-size: clamp(1.7rem, 3.6vw, 2.5rem) !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.08em !important;
+	text-transform: uppercase !important;
+	line-height: 1.15 !important;
+	color: #ffffff !important;
+	background: none !important;
+	word-spacing: normal !important;
+	white-space: nowrap !important;
+}
+
+body.home .lh-videos .widgettitle::before,
+body.home .lh-videos .widgettitle::after,
+body.home .lh-faqs .widgettitle::before,
+body.home .lh-faqs .widgettitle::after {
+	content: "";
+	width: clamp(36px, 6vw, 64px);
+	height: 1px;
+	background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+body.home .lh-videos-row,
+body.home .vc_row:has(.lh-videos),
+body.home .cws-content:has(.lh-videos) {
+	background: transparent !important;
+	background-image: none !important;
+	border: 0 !important;
+	box-shadow: none !important;
+}
+
+body.home .lh-videos-row .cws-overlay-bg,
+body.home .vc_row:has(.lh-videos) .cws-overlay-bg,
+body.home .cws-content:has(.lh-videos) .cws-overlay-bg {
+	display: none !important;
+	background: none !important;
+}
+
+body.home .lh-videos-grid,
+body.home .vc_row.vc_inner:has(.wpb_video_widget) {
+	display: flex !important;
+	flex-wrap: wrap !important;
+	justify-content: center !important;
+	gap: 18px !important;
+	width: 100% !important;
+	max-width: 1180px;
+	margin: 0 auto 28px !important;
+	padding: 8px clamp(16px, 3vw, 28px) 28px !important;
+	float: none !important;
+	background: transparent !important;
+}
+
+body.home .lh-videos-grid::before,
+body.home .lh-videos-grid::after,
+body.home .vc_row.vc_inner:has(.wpb_video_widget)::before,
+body.home .vc_row.vc_inner:has(.wpb_video_widget)::after {
+	content: none !important;
+	display: none !important;
+}
+
+body.home .lh-videos-grid > .wpb_column,
+body.home .vc_row.vc_inner:has(.wpb_video_widget) > .wpb_column {
+	float: none !important;
+	flex: 1 1 300px !important;
+	max-width: 380px !important;
+	width: auto !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	background: transparent !important;
+}
+
+body.home .lh-videos-grid .wpb_video_widget,
+body.home .lh-videos-grid .wpb_wrapper,
+body.home .lh-videos-grid .wpb_video_wrapper,
+body.home .lh-videos-grid .cws_oembed_wrapper {
+	margin: 0 !important;
+	padding: 0 !important;
+	background: transparent !important;
+	border: 0 !important;
+}
+
+body.home .lh-videos-grid .wpb_video_wrapper,
+body.home .lh-videos-grid .cws_oembed_wrapper {
+	overflow: hidden !important;
+	border-radius: 16px !important;
+	border: 1px solid rgba(212, 175, 55, 0.28);
+	aspect-ratio: 16 / 9;
+	background: #000 !important;
+}
+
+body.home .lh-videos-grid iframe {
+	display: block !important;
+	width: 100% !important;
+	height: 100% !important;
+	border: 0 !important;
+}
+
+body.home .lh-faqs-row,
+body.home .vc_row:has(.vc_do_toggle) {
+	width: 100% !important;
+	max-width: 980px;
+	margin: 0 auto 48px !important;
+	padding: 0 clamp(16px, 3vw, 28px) 24px !important;
+	background: transparent !important;
+}
+
+body.home .lh-faqs-row .vc_empty_space {
+	display: none !important;
+}
+
+body.home .lh-faqs-row .vc_do_toggle,
+body.home .lh-faqs-row .vc_toggle {
+	margin: 0 0 10px !important;
+	padding: 14px 18px !important;
+	border-radius: 14px !important;
+	border: 1px solid rgba(212, 175, 55, 0.32) !important;
+	background: linear-gradient(145deg, rgba(12, 28, 64, 0.72) 0%, rgba(4, 14, 36, 0.88) 100%) !important;
+	box-shadow: none !important;
+}
+
+body.home .lh-faqs-row .vc_toggle_title {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: space-between !important;
+	gap: 12px;
+	position: relative !important;
+	padding: 0 44px 0 0 !important;
+	margin: 0 !important;
+	background: none !important;
+	cursor: pointer;
+}
+
+body.home .lh-faqs-row .vc_toggle_title h4,
+body.home .lh-faqs-row .vc_toggle_title > h4 {
+	flex: 1 1 auto;
+	margin: 0 !important;
+	margin-left: 0 !important;
+	padding: 0 !important;
+	font-family: "Source Sans 3", "Segoe UI", sans-serif !important;
+	font-size: 1rem !important;
+	font-weight: 600 !important;
+	line-height: 1.45 !important;
+	color: #fffaf0 !important;
+	text-align: left !important;
+	word-spacing: normal !important;
+}
+
+body.home .lh-faqs-row .vc_toggle_icon {
+	display: block !important;
+	position: absolute !important;
+	top: 50% !important;
+	right: 0 !important;
+	left: auto !important;
+	width: 28px !important;
+	height: 28px !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 1.5px solid #d4af37 !important;
+	border-radius: 50% !important;
+	background: transparent !important;
+	line-height: 28px !important;
+	transform: translateY(-50%) !important;
+	-webkit-transform: translateY(-50%) !important;
+}
+
+body.home .lh-faqs-row .vc_toggle_icon:before,
+body.home .lh-faqs-row .vc_toggle_icon:after {
+	content: "" !important;
+	display: block !important;
+	position: absolute !important;
+	top: 50% !important;
+	left: 50% !important;
+	width: 12px !important;
+	height: 2px !important;
+	margin: 0 !important;
+	border: 0 !important;
+	background: #d4af37 !important;
+	transform: translate(-50%, -50%) !important;
+	-webkit-transform: translate(-50%, -50%) !important;
+}
+
+body.home .lh-faqs-row .vc_toggle_icon:after {
+	transform: translate(-50%, -50%) rotate(90deg) !important;
+	-webkit-transform: translate(-50%, -50%) rotate(90deg) !important;
+}
+
+body.home .lh-faqs-row .vc_toggle.vc_toggle_active .vc_toggle_icon:after {
+	display: none !important;
+}
+
+body.home .lh-faqs-row .vc_toggle_content,
+body.home .lh-faqs-row .vc_toggle_content p,
+body.home .lh-faqs-row .vc_toggle_content li,
+body.home .lh-faqs-row .vc_toggle_content a {
+	color: rgba(255, 248, 231, 0.88) !important;
+	font-family: "Source Sans 3", "Segoe UI", sans-serif !important;
+	font-size: 0.95rem !important;
+	line-height: 1.7 !important;
+	text-align: left !important;
+	word-spacing: normal !important;
+}
+
+body.home .lh-faqs-row .vc_toggle_content {
+	padding: 10px 0 2px !important;
+	padding-left: 0 !important;
+	background: none !important;
+}
+
+body.home .lh-faqs-row .vc_toggle_content strong,
+body.home .lh-faqs-row .vc_toggle_content b {
+	color: #e8c547 !important;
+	font-weight: 600 !important;
+}
+
+@media (max-width: 760px) {
+	body.home .lh-videos .widgettitle,
+	body.home .lh-faqs .widgettitle {
+		white-space: normal !important;
+		letter-spacing: 0.05em !important;
+	}
+
+	body.home .lh-videos-grid > .wpb_column,
+	body.home .vc_row.vc_inner:has(.wpb_video_widget) > .wpb_column {
+		flex-basis: 100% !important;
+		max-width: 100% !important;
+	}
+}

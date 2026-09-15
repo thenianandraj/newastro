@@ -1,0 +1,128 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 22/08/2017 09:22
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-people-8:before { content: "\f100"; }
+.flaticon-woman:before { content: "\f101"; }
+.flaticon-people-7:before { content: "\f102"; }
+.flaticon-people-6:before { content: "\f103"; }
+.flaticon-sports-4:before { content: "\f104"; }
+.flaticon-art:before { content: "\f105"; }
+.flaticon-signs:before { content: "\f106"; }
+.flaticon-people-5:before { content: "\f107"; }
+.flaticon-interface:before { content: "\f108"; }
+.flaticon-people-4:before { content: "\f109"; }
+.flaticon-people-3:before { content: "\f10a"; }
+.flaticon-hat:before { content: "\f10b"; }
+.flaticon-avatar:before { content: "\f10c"; }
+.flaticon-game:before { content: "\f10d"; }
+.flaticon-sport-1:before { content: "\f10e"; }
+.flaticon-fruit-1:before { content: "\f10f"; }
+.flaticon-medical-1:before { content: "\f110"; }
+.flaticon-drink:before { content: "\f111"; }
+.flaticon-fruit:before { content: "\f112"; }
+.flaticon-food-1:before { content: "\f113"; }
+.flaticon-fruits:before { content: "\f114"; }
+.flaticon-food:before { content: "\f115"; }
+.flaticon-gym-12:before { content: "\f116"; }
+.flaticon-sport:before { content: "\f117"; }
+.flaticon-gym-11:before { content: "\f118"; }
+.flaticon-gym-10:before { content: "\f119"; }
+.flaticon-gym-9:before { content: "\f11a"; }
+.flaticon-exercise-2:before { content: "\f11b"; }
+.flaticon-gym-8:before { content: "\f11c"; }
+.flaticon-time:before { content: "\f11d"; }
+.flaticon-exercise-1:before { content: "\f11e"; }
+.flaticon-gym-7:before { content: "\f11f"; }
+.flaticon-gym-6:before { content: "\f120"; }
+.flaticon-tool-1:before { content: "\f121"; }
+.flaticon-gym-5:before { content: "\f122"; }
+.flaticon-transport:before { content: "\f123"; }
+.flaticon-circle:before { content: "\f124"; }
+.flaticon-multimedia:before { content: "\f125"; }
+.flaticon-arrows-1:before { content: "\f126"; }
+.flaticon-increase-size-option:before { content: "\f127"; }
+.flaticon-plus-button:before { content: "\f128"; }
+.flaticon-right-arrow-circular-button:before { content: "\f129"; }
+.flaticon-arrows:before { content: "\f12a"; }
+.flaticon-social-media-1:before { content: "\f12b"; }
+.flaticon-social-media:before { content: "\f12c"; }
+.flaticon-symbols:before { content: "\f12d"; }
+.flaticon-social-3:before { content: "\f12e"; }
+.flaticon-social-2:before { content: "\f12f"; }
+.flaticon-social-1:before { content: "\f130"; }
+.flaticon-social:before { content: "\f131"; }
+.flaticon-quote-left:before { content: "\f132"; }
+.flaticon-link-symbol:before { content: "\f133"; }
+.flaticon-coach:before { content: "\f134"; }
+.flaticon-people-2:before { content: "\f135"; }
+.flaticon-sports-3:before { content: "\f136"; }
+.flaticon-technology:before { content: "\f137"; }
+.flaticon-tool:before { content: "\f138"; }
+.flaticon-gym-4:before { content: "\f139"; }
+.flaticon-shapes-1:before { content: "\f13a"; }
+.flaticon-smart:before { content: "\f13b"; }
+.flaticon-knife:before { content: "\f13c"; }
+.flaticon-sports-2:before { content: "\f13d"; }
+.flaticon-gym-3:before { content: "\f13e"; }
+.flaticon-healthy-1:before { content: "\f13f"; }
+.flaticon-gym-2:before { content: "\f140"; }
+.flaticon-health:before { content: "\f141"; }
+.flaticon-two:before { content: "\f142"; }
+.flaticon-cup:before { content: "\f143"; }
+.flaticon-gym-1:before { content: "\f144"; }
+.flaticon-exercise:before { content: "\f145"; }
+.flaticon-shapes:before { content: "\f146"; }
+.flaticon-gym:before { content: "\f147"; }
+.flaticon-healthy:before { content: "\f148"; }
+.flaticon-people-1:before { content: "\f149"; }
+.flaticon-medical:before { content: "\f14a"; }
+.flaticon-sports-1:before { content: "\f14b"; }
+.flaticon-people:before { content: "\f14c"; }
+.flaticon-nature:before { content: "\f14d"; }
+.flaticon-yoga-position:before { content: "\f14e"; }
+.flaticon-lotus-1:before { content: "\f14f"; }
+.flaticon-gymnast-girl:before { content: "\f150"; }
+.flaticon-yoga-2:before { content: "\f151"; }
+.flaticon-chakra:before { content: "\f152"; }
+.flaticon-om:before { content: "\f153"; }
+.flaticon-yoga-1:before { content: "\f154"; }
+.flaticon-yoga-mat-1:before { content: "\f155"; }
+.flaticon-yoga-mat:before { content: "\f156"; }
+.flaticon-meditation:before { content: "\f157"; }
+.flaticon-yoga:before { content: "\f158"; }
+.flaticon-lotus:before { content: "\f159"; }
+.flaticon-buddhist-yoga-pose:before { content: "\f15a"; }
+.flaticon-sports:before { content: "\f15b"; }
+.flaticon-left-arrow:before { content: "\f15c"; }
+.flaticon-arrows-2:before { content: "\f15d"; }
+.flaticon-search:before { content: "\f15e"; }
+.flaticon-business:before { content: "\f15f"; }
+.flaticon-internet:before { content: "\f160"; }

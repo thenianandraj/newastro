@@ -1,0 +1,196 @@
+/* Why Trust Us — screenshot look. Existing text/images stay. */
+
+body.home .lh-why-trust-row,
+body.home .lh-why-trust-stats {
+	width: 100% !important;
+	max-width: 100% !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	background:
+		radial-gradient(ellipse 55% 70% at 8% 55%, rgba(212, 175, 55, 0.08) 0%, transparent 55%),
+		linear-gradient(180deg, #000814 0%, #000b1e 50%, #020d22 100%) !important;
+	background-image: none, linear-gradient(180deg, #000814 0%, #000b1e 50%, #020d22 100%) !important;
+}
+
+body.home .lh-why-trust-row {
+	padding: clamp(48px, 6vw, 72px) clamp(16px, 3vw, 28px) 12px !important;
+}
+
+body.home .lh-why-trust-stats {
+	padding: 8px clamp(16px, 3vw, 28px) clamp(36px, 5vw, 56px) !important;
+}
+
+body.home .lh-why-trust,
+body.home .lh-why-trust-row,
+body.home .cws_textmodule.lh-why-trust {
+	display: block !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+	height: auto !important;
+	max-height: none !important;
+	overflow: visible !important;
+}
+
+body.home .lh-why-trust {
+	max-width: 1180px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+body.home .lh-why-trust .cws_textmodule_icon_wrapper {
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto 14px !important;
+}
+
+body.home .lh-why-trust .cws_separator_icon,
+body.home .lh-why-trust .cws_textmodule_icon,
+body.home .lh-why-trust .flaticon-gym-5 {
+	display: none !important;
+}
+
+body.home .lh-why-trust .cws_textmodule_icon_wrapper::before {
+	content: "ॐ";
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	border: 1.5px solid #d4af37;
+	color: #d4af37;
+	font-family: "Cormorant Garamond", Georgia, serif;
+	font-size: 1.25rem;
+	line-height: 1;
+	box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+}
+
+body.home .lh-why-trust .widgettitle,
+body.home .lh-why-trust .widgettitle span {
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	gap: 14px;
+	margin: 0 0 10px !important;
+	font-family: "Cormorant Garamond", Georgia, serif !important;
+	font-size: clamp(1.85rem, 4vw, 2.75rem) !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.08em !important;
+	text-transform: uppercase !important;
+	line-height: 1.15 !important;
+	color: #ffffff !important;
+	background: none !important;
+	word-spacing: normal !important;
+}
+
+body.home .lh-why-trust .widgettitle::before,
+body.home .lh-why-trust .widgettitle::after {
+	content: "";
+	width: clamp(36px, 6vw, 64px);
+	height: 1px;
+	background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+body.home .lh-why-trust .cws_textmodule_content,
+body.home .lh-why-trust .cws_textmodule_content p,
+body.home .lh-why-trust .read_div,
+body.home .lh-why-trust .read_div p {
+	max-width: 1180px;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	text-align: center !important;
+	font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif !important;
+	font-size: clamp(0.95rem, 1.5vw, 1.05rem) !important;
+	font-weight: 400 !important;
+	line-height: 1.75 !important;
+	color: rgba(245, 247, 251, 0.88) !important;
+	word-spacing: normal !important;
+	letter-spacing: normal !important;
+	white-space: normal !important;
+}
+
+body.home .lh-why-trust .cws_textmodule_content strong,
+body.home .lh-why-trust .read_div strong {
+	color: #e8c547 !important;
+	font-weight: 600 !important;
+}
+
+body.home .lh-why-trust .read-link,
+body.home .lh-why-trust .rmwr-wrapper > button,
+body.home .lh-why-trust .rmwr-text {
+	display: none !important;
+}
+
+body.home .lh-why-trust .read_div,
+body.home .lh-why-trust .rmwr-wrapper .read_div {
+	display: block !important;
+	visibility: visible !important;
+	height: auto !important;
+	max-height: none !important;
+	overflow: visible !important;
+	opacity: 1 !important;
+}
+
+body.home .lh-why-trust-stats .vc_row,
+body.home .lh-why-trust-stats {
+	display: flex !important;
+	flex-wrap: wrap !important;
+	justify-content: center !important;
+	gap: 12px !important;
+}
+
+body.home .lh-why-trust-stats > .wpb_column,
+body.home .lh-why-trust-stats .vc_column_container.vc_col-sm-3,
+body.home .lh-why-trust-stats .vc_column_container.vc_col-sm-2,
+body.home .lh-why-trust-stats .vc_column_container.vc_col-sm-4 {
+	float: none !important;
+	width: auto !important;
+	max-width: 220px !important;
+	flex: 1 1 180px !important;
+	padding: 0 !important;
+}
+
+body.home .lh-why-trust-stats .vc_column-inner,
+body.home .lh-why-trust-stats .wpb_wrapper {
+	display: flex !important;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 72px;
+	padding: 12px 14px !important;
+	border-radius: 14px;
+	border: 1px solid rgba(212, 175, 55, 0.45) !important;
+	background: linear-gradient(145deg, rgba(12, 28, 64, 0.72) 0%, rgba(4, 14, 36, 0.85) 100%) !important;
+	box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+	text-align: center;
+}
+
+body.home .lh-why-trust-stats .widgettitle,
+body.home .lh-why-trust-stats .wpb_text_column,
+body.home .lh-why-trust-stats p {
+	color: #ffffff !important;
+	font-family: "Source Sans 3", "Segoe UI", sans-serif !important;
+	font-size: 0.85rem !important;
+	font-weight: 600 !important;
+	line-height: 1.35 !important;
+	margin: 0 !important;
+	word-spacing: normal !important;
+}
+
+body.home .lh-why-trust-stats img {
+	width: 28px !important;
+	height: 28px !important;
+	margin: 0 0 8px !important;
+	object-fit: contain;
+	filter: invert(1) sepia(1) saturate(6) hue-rotate(6deg) brightness(1.1);
+}
+
+@media (max-width: 760px) {
+	body.home .lh-why-trust .widgettitle {
+		letter-spacing: 0.05em !important;
+		gap: 10px;
+	}
+}

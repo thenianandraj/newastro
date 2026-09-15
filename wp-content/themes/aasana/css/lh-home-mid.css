@@ -1,0 +1,85 @@
+/* Homepage middle — ready look. Does not hide or replace content. */
+
+body.home .page_content,
+body.home .page_content *:not(.lh-home-hero):not(.lh-home-hero *) {
+	font-family: "Source Sans 3", "Segoe UI", Arial, Helvetica, sans-serif;
+	word-spacing: normal;
+	letter-spacing: normal;
+}
+
+body.home .page_content,
+body.home .page_content main,
+body.home .wpb-content-wrapper {
+	overflow: visible !important;
+	max-height: none !important;
+	height: auto !important;
+}
+
+body.home .page_content h1,
+body.home .page_content h2,
+body.home .page_content h3,
+body.home .page_content .ce_title .title,
+body.home .page_content .cws_sc_text .ce_title,
+body.home .page_content .widget-title {
+	font-family: "Cormorant Garamond", Georgia, serif !important;
+	color: #f0d35a !important;
+	font-weight: 700;
+	line-height: 1.25;
+	text-align: center;
+	word-spacing: normal !important;
+	letter-spacing: 0.02em !important;
+}
+
+body.home .page_content p,
+body.home .page_content li,
+body.home .page_content .wpb_text_column,
+body.home .page_content .wpb_wrapper,
+body.home .page_content .vc_column-inner {
+	color: rgba(255, 248, 231, 0.9);
+	word-spacing: normal !important;
+	letter-spacing: normal !important;
+	white-space: normal !important;
+}
+
+body.home .page_content a {
+	color: #f0d35a;
+	pointer-events: auto;
+}
+
+body.home .page_content a:hover {
+	color: #ffe27a;
+}
+
+body.home .page_content img,
+body.home .page_content iframe,
+body.home .page_content video {
+	display: block;
+	max-width: 100%;
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
+body.home .page_content .vc_row,
+body.home .page_content .wpb_column,
+body.home .page_content .vc_column_container,
+body.home .page_content .vc_column-inner,
+body.home .page_content .wpb_wrapper {
+	visibility: visible !important;
+	opacity: 1 !important;
+	overflow: visible !important;
+}
+
+body.home .page_content .cws_button,
+body.home .page_content .woocommerce .button,
+body.home .page_content input[type="submit"] {
+	border-radius: 999px;
+	font-family: "Source Sans 3", "Segoe UI", sans-serif;
+}
+
+body.home .page_content .cws_ourteam,
+body.home .page_content .cws_services,
+body.home .page_content .cws_testimonials,
+body.home .page_content .news,
+body.home .page_content .pricing_table {
+	visibility: visible !important;
+}
