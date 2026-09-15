@@ -10,9 +10,11 @@ body.home .page_content *:not(.lh-home-hero):not(.lh-home-hero *) {
 body.home .page_content,
 body.home .page_content main,
 body.home .wpb-content-wrapper {
-	overflow: visible !important;
+	overflow-x: hidden !important;
+	overflow-y: visible !important;
 	max-height: none !important;
 	height: auto !important;
+	max-width: 100% !important;
 }
 
 body.home .page_content h1,

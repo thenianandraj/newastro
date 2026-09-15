@@ -276,8 +276,11 @@ body.home .lh-faqs-row .vc_toggle_content b {
 
 @media (max-width: 760px) {
 	body.home .lh-videos .widgettitle,
-	body.home .lh-faqs .widgettitle {
+	body.home .lh-videos .widgettitle span,
+	body.home .lh-faqs .widgettitle,
+	body.home .lh-faqs .widgettitle span {
 		white-space: normal !important;
+		flex-wrap: wrap !important;
 		letter-spacing: 0.05em !important;
 	}
 

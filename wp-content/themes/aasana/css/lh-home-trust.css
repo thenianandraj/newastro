@@ -189,8 +189,22 @@ body.home .lh-why-trust-stats img {
 }
 
 @media (max-width: 760px) {
-	body.home .lh-why-trust .widgettitle {
+	body.home .lh-why-trust-row {
+		padding-top: 28px !important;
+		padding-bottom: 12px !important;
+	}
+
+	body.home .lh-why-trust .widgettitle,
+	body.home .lh-why-trust .widgettitle span {
+		white-space: normal !important;
+		flex-wrap: wrap !important;
 		letter-spacing: 0.05em !important;
 		gap: 10px;
+	}
+
+	body.home .lh-why-trust-stats > .wpb_column,
+	body.home .lh-why-trust-stats .vc_column_container {
+		flex: 1 1 calc(50% - 12px) !important;
+		max-width: calc(50% - 12px) !important;
 	}
 }

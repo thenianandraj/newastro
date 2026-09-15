@@ -3527,7 +3527,12 @@ class Aasana_Funcs {
 			foreach ($logo as $key => $value) {
 		    	switch ($key) {
 			        case 'img' :
-			            $out .= '<img '. $logo[$key] . $logo_h .' />';
+			            $img_attrs = $logo[$key];
+			            if ( $img_attrs && stripos( $img_attrs, 'src=' ) === false && preg_match( '/^(https?:\/\/\S+)/i', trim( $img_attrs ), $img_src_match ) ) {
+			            	$img_rest = trim( substr( trim( $img_attrs ), strlen( $img_src_match[1] ) ) );
+			            	$img_attrs = " src='" . esc_url( $img_src_match[1] ) . "' " . $img_rest;
+			            }
+			            $out .= '<img '. $img_attrs . $logo_h .' />';
 			            break ;
 			        case 'svg' :
 			            $out .= $logo[$key];
@@ -8232,5 +8237,6 @@ add_action('send_headers', 'remove_x_powered_by_header');
 require_once get_template_directory() . '/inc/lh-home-refresh.php';
 require_once get_template_directory() . '/inc/lh-footer.php';
 require_once get_template_directory() . '/inc/lh-header-menu.php';
+require_once get_template_directory() . '/inc/lh-service-page.php';
 
 ?>

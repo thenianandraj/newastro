@@ -10,6 +10,14 @@ body.home .wpb-content-wrapper {
 
 body.home {
 	background: linear-gradient(180deg, #000814 0%, #000b1e 45%, #020d22 100%) !important;
+	overflow-x: hidden !important;
+	max-width: 100% !important;
+	width: 100% !important;
+}
+
+html:has(body.home) {
+	overflow-x: hidden;
+	max-width: 100%;
 }
 
 /* Hide theme chrome + old banner slider only */
@@ -41,6 +49,13 @@ body.home .fs_img_header {
 body.home #main.site-main {
 	margin-top: 0 !important;
 	padding-top: 0 !important;
+	overflow-x: hidden;
+	max-width: 100%;
+}
+
+body.home .lh-home-hero,
+body.home .lh-home-hero__img {
+	max-width: 100%;
 }
 
 body.home .page_content > .container {
@@ -57,9 +72,10 @@ body.home .lh-home-hero {
 	--lh-hero-ink: #fff8e7;
 	--lh-header-h: 72px;
 	position: relative;
-	display: block;
+	display: grid;
 	width: 100%;
-	height: clamp(480px, calc(100vh - var(--lh-header-h)), 860px);
+	height: auto;
+	min-height: 0;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
@@ -68,25 +84,34 @@ body.home .lh-home-hero {
 	box-sizing: border-box;
 }
 
+body.home .lh-home-hero__media,
+body.home .lh-home-hero__shade,
+body.home .lh-home-hero__inner {
+	grid-area: 1 / 1;
+}
+
 body.home .lh-home-hero__media {
-	position: absolute;
-	inset: 0;
+	position: relative;
 	z-index: 0;
 	overflow: hidden;
+	width: 100%;
 }
 
 body.home .lh-home-hero__img {
 	display: block;
 	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: 78% 28%;
+	height: auto;
+	max-width: 100%;
+	object-fit: contain;
+	object-position: center;
 }
 
 body.home .lh-home-hero__shade {
 	position: absolute;
 	inset: 0;
 	z-index: 1;
+	width: auto;
+	height: auto;
 	pointer-events: none;
 	background:
 		linear-gradient(
@@ -99,13 +124,14 @@ body.home .lh-home-hero__shade {
 }
 
 body.home .lh-home-hero__inner {
-	position: relative;
+	position: absolute;
+	inset: 0;
 	z-index: 2;
 	display: flex;
 	align-items: center;
 	width: 100%;
 	max-width: 1320px;
-	height: 100%;
+	height: auto;
 	margin: 0 auto;
 	padding: clamp(28px, 4vw, 48px) 24px;
 	box-sizing: border-box;
@@ -191,21 +217,108 @@ body.home .page_content main > .row_bg {
 }
 
 @media (max-width: 767px) {
+	body.home #main.site-main,
+	body.home .page_content > .container,
+	body.home .vc_row,
+	body.home .wpb_column,
+	body.home .vc_column_container {
+		max-width: 100% !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		left: auto !important;
+		box-sizing: border-box;
+	}
+
+	body.home .page_content > .container {
+		padding-left: 16px;
+		padding-right: 16px;
+		overflow-x: hidden;
+	}
+
+	body.home .page_content .vc_row {
+		width: 100% !important;
+	}
+
 	body.home .lh-home-hero {
 		height: auto;
-		min-height: 560px;
+		min-height: 0;
+		overflow: hidden;
+		max-width: 100%;
+	}
+
+	body.home .lh-home-hero__media,
+	body.home .lh-home-hero__shade {
+		position: absolute;
+		inset: 0;
+		width: auto;
+		height: auto;
+		min-height: 0;
+		max-height: none;
 	}
 
 	body.home .lh-home-hero__img {
-		object-position: 88% 20%;
+		width: 100%;
+		height: 100%;
+		max-width: none;
+		min-height: 100%;
+		object-fit: cover;
+		object-position: 82% 18%;
+	}
+
+	body.home .lh-home-hero__shade {
+		background:
+			linear-gradient(
+				180deg,
+				rgba(6, 3, 12, 0.55) 0%,
+				rgba(6, 3, 12, 0.22) 40%,
+				rgba(6, 3, 12, 0.78) 100%
+			);
 	}
 
 	body.home .lh-home-hero__inner {
-		align-items: flex-end;
-		padding-bottom: 36px;
+		position: relative;
+		inset: auto;
+		z-index: 2;
+		height: auto;
+		align-items: flex-start;
+		padding: 20px 16px 24px;
 	}
 
 	body.home .lh-home-hero__copy {
-		max-width: 100%;
+		max-width: 70%;
+	}
+
+	body.home .lh-home-hero__brand {
+		margin: 0 0 6px;
+		font-size: 1.1rem;
+		white-space: normal;
+	}
+
+	body.home .lh-home-hero__title {
+		margin: 0 0 8px;
+		font-size: clamp(1.4rem, 6.5vw, 1.75rem);
+		line-height: 1.18;
+		white-space: normal;
+	}
+
+	body.home .lh-home-hero__text {
+		max-width: 16em;
+		margin: 0 0 12px;
+		font-size: 0.86rem;
+		line-height: 1.4;
+		white-space: normal !important;
+		overflow-wrap: break-word;
+		word-break: normal;
+	}
+
+	body.home .lh-home-hero__btn {
+		min-height: 40px;
+		padding: 0 18px;
+		font-size: 0.88rem;
+	}
+
+	body.home .page_content main > .vc_row:first-child,
+	body.home .lh-why-trust-row {
+		padding-top: 28px !important;
 	}
 }
