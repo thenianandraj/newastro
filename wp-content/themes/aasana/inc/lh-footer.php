@@ -12,18 +12,11 @@ function lh_newastro_enqueue_footer_assets() {
 		return;
 	}
 
-	wp_enqueue_style(
-		'lh-footer-font',
-		'https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap',
-		array(),
-		null
-	);
-
 	$css = get_template_directory() . '/css/lh-footer.css';
 	wp_enqueue_style(
 		'lh-footer',
 		get_template_directory_uri() . '/css/lh-footer.css',
-		array( 'cws_main', 'lh-footer-font' ),
+		array( 'cws_main', 'lh-cormorant' ),
 		file_exists( $css ) ? filemtime( $css ) : '1.2'
 	);
 }

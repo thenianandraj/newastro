@@ -8235,8 +8235,10 @@ function remove_x_powered_by_header() {
 add_action('send_headers', 'remove_x_powered_by_header');
 
 require_once get_template_directory() . '/inc/lh-home-refresh.php';
+require_once get_template_directory() . '/inc/lh-perf-assets.php';
 require_once get_template_directory() . '/inc/lh-footer.php';
 require_once get_template_directory() . '/inc/lh-header-menu.php';
 require_once get_template_directory() . '/inc/lh-service-page.php';
+require_once get_template_directory() . '/inc/lh-conditional-assets.php';
 
 ?>

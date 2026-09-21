@@ -332,6 +332,30 @@ html body .sticky_header.sticky_active .site_header .header_logo_part .logo > im
 	}
 }
 
+/* Mini-cart dropdown must stay hidden until hover (theme woo CSS may be late/absent). */
+html body .mini-cart {
+	position: relative !important;
+	overflow: visible !important;
+}
+html body .mini-cart .woo_mini_cart,
+html body .header_wrapper_container .mini-cart .woo_mini_cart,
+html body .header_cont.lh-mobile-pinned .mini-cart .woo_mini_cart {
+	position: absolute !important;
+	top: calc(100% + 12px) !important;
+	right: 0 !important;
+	width: min(370px, 92vw) !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+	z-index: 100090 !important;
+}
+html body .mini-cart:hover .woo_mini_cart,
+html body .mini-cart:focus-within .woo_mini_cart {
+	visibility: visible !important;
+	opacity: 1 !important;
+	pointer-events: auto !important;
+}
+
 /* Mobile hamburger + accordion. Do not wait for .cws_mobile. */
 @media (max-width: 979px) {
 	html,
@@ -352,6 +376,32 @@ html body .sticky_header.sticky_active .site_header .header_logo_part .logo > im
 	html body .header_wrapper_container .header_zone,
 	html body .header_wrapper_container .menu_box {
 		overflow: visible !important;
+	}
+
+	/* Keep logo + icons + hamburger on one row; never let cart text expand the bar. */
+	html body .header_wrapper_container .menu_box .container,
+	html body .header_cont.lh-mobile-pinned .menu_box .container {
+		display: flex !important;
+		align-items: center !important;
+		justify-content: space-between !important;
+		flex-wrap: nowrap !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		box-sizing: border-box !important;
+	}
+	html body .header_wrapper_container .menu_left_icons,
+	html body .header_wrapper_container .menu_right_icons,
+	html body .header_cont.lh-mobile-pinned .menu_left_icons,
+	html body .header_cont.lh-mobile-pinned .menu_right_icons {
+		display: flex !important;
+		align-items: center !important;
+		flex: 0 0 auto !important;
+		max-width: none !important;
+		overflow: visible !important;
+	}
+	html body .header_wrapper_container .mini-cart .woocommerce-mini-cart__empty-message,
+	html body .header_cont.lh-mobile-pinned .mini-cart .woocommerce-mini-cart__empty-message {
+		display: none !important;
 	}
 
 	/* Bar stays on screen; page keeps its original space. */
