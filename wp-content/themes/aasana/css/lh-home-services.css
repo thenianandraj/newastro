@@ -15,7 +15,9 @@ body.home .cws-content:has(.lh-svc-head) > .vc_row {
 	position: relative;
 	width: 100% !important;
 	max-width: 100% !important;
-	left: auto;
+	left: 0 !important;
+	right: auto !important;
+	transform: none !important;
 	margin-left: 0 !important;
 	margin-right: 0 !important;
 	padding: clamp(36px, 5vw, 56px) clamp(16px, 3vw, 28px) 8px !important;
@@ -358,7 +360,9 @@ body.home #our-services .cws_vc_shortcode_button {
 	body.home .vc_row:has(.lh-svc-head) {
 		width: 100% !important;
 		max-width: 100% !important;
-		left: auto;
+		left: 0 !important;
+		right: auto !important;
+		transform: none !important;
 		margin-left: 0 !important;
 	}
 

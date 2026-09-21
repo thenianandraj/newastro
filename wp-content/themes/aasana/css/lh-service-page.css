@@ -37,6 +37,11 @@ body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) > .cws-co
 	background-image: none !important;
 }
 
+body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) .cws-overlay-bg,
+body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) .cws-layer {
+	pointer-events: none !important;
+}
+
 @media screen and (min-width: 992px) {
 	body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) {
 		display: grid;
@@ -73,6 +78,7 @@ body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) > .cws-co
 	}
 
 	body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) .vc_gutenberg,
+	body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) .wp-block-audio,
 	body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) #process,
 	body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) #account-details,
 	body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) .related.products,
@@ -309,19 +315,24 @@ body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) .cws-cont
 	white-space: normal !important;
 }
 
-body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) .wp-block-audio,
-body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) .wp-block-audio audio {
+body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) .wp-block-audio {
+	position: relative;
+	z-index: 5;
 	width: 100% !important;
 	max-width: 520px !important;
 	margin: 8px 0 20px !important;
-}
-
-body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) .wp-block-audio {
 	padding: 14px 16px !important;
 	border-radius: 16px;
 	border: 1px solid rgba(212, 175, 55, 0.35);
 	background: linear-gradient(145deg, rgba(12, 28, 64, 0.72) 0%, rgba(4, 14, 36, 0.85) 100%);
 	box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+	pointer-events: auto;
+}
+
+body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) .wp-block-audio .mejs-container,
+body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) .wp-block-audio .wp-audio-shortcode {
+	width: 100% !important;
+	max-width: 100% !important;
 }
 
 body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) #service-row,
@@ -398,10 +409,54 @@ body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) a.clik:ho
 
 body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) .vc_gutenberg .wp-block-button__link,
 body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) .wp-block-buttons .wp-block-button__link {
+	display: inline-flex !important;
+	align-items: center;
+	justify-content: center;
 	border-radius: 999px !important;
-	border-color: rgba(212, 175, 55, 0.55) !important;
+	border: 1px solid #d4af37 !important;
+	background: rgba(212, 175, 55, 0.12) !important;
+	background-color: rgba(212, 175, 55, 0.12) !important;
+	color: #f0d35a !important;
 	font-family: "Source Sans 3", "Segoe UI", sans-serif !important;
+	font-size: 0.85rem !important;
 	font-weight: 600 !important;
+	letter-spacing: 0.04em !important;
+	text-decoration: none !important;
+	box-shadow: none !important;
+}
+
+body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) .vc_gutenberg .wp-block-button__link:hover,
+body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) .wp-block-buttons .wp-block-button__link:hover {
+	background: #d4af37 !important;
+	background-color: #d4af37 !important;
+	border-color: #d4af37 !important;
+	color: #000b1e !important;
+}
+
+/* Form Add to Cart — match navy/gold theme (not orange) */
+body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) form.cart .single_add_to_cart_button,
+body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) form.cart button[type="submit"],
+body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) form.cart .button {
+	border-radius: 999px !important;
+	border: 1px solid #d4af37 !important;
+	background: #d4af37 !important;
+	background-color: #d4af37 !important;
+	background-image: none !important;
+	color: #000b1e !important;
+	font-family: "Source Sans 3", "Segoe UI", sans-serif !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.04em !important;
+	box-shadow: none !important;
+	text-shadow: none !important;
+}
+
+body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) form.cart .single_add_to_cart_button:hover,
+body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) form.cart button[type="submit"]:hover,
+body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) form.cart .button:hover {
+	background: #e8c547 !important;
+	background-color: #e8c547 !important;
+	border-color: #e8c547 !important;
+	color: #000b1e !important;
 }
 
 body.lh-service-page .page_content .wpb-content-wrapper:has(form.cart) .lh-form-heading,

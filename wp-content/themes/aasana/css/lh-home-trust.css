@@ -4,6 +4,9 @@ body.home .lh-why-trust-row,
 body.home .lh-why-trust-stats {
 	width: 100% !important;
 	max-width: 100% !important;
+	left: 0 !important;
+	right: auto !important;
+	transform: none !important;
 	margin-left: 0 !important;
 	margin-right: 0 !important;
 	padding-left: 0 !important;

@@ -12,7 +12,13 @@ function lh_newastro_is_service_landing() {
 	if ( is_admin() || is_front_page() || ! is_page() ) {
 		return false;
 	}
-
+// Frontend Editor — don't apply layout CSS/JS
+if ( function_exists( 'vc_is_inline' ) && vc_is_inline() ) {
+	return false;
+}
+if ( isset( $_GET['vc_editable'] ) || isset( $_GET['vc_action'] ) ) {
+	return false;
+}
 	$post = get_queried_object();
 	if ( ! $post || empty( $post->post_content ) ) {
 		return false;
