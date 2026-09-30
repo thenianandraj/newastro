@@ -23,7 +23,7 @@ if (function_exists( 'cws_core_cwsfw_get_args' ) && get_option('aasana')){
 	$aasana_theme_funcs = new Aasana_Funcs();
 } else {
 	$aasana_theme_standard = new Aasana_Funcs_default();
-}
+}  
 
 
 // CWS Theme Aasana Standard Settings

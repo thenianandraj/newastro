@@ -432,7 +432,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Matomo Code -->
 
 
-<!-- Meta Pixel Code disabled
+<?php if ( false ) : /* Meta Pixel disabled — do not use // outside <script> */ ?>
+<!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -449,7 +450,8 @@ fbq('track', 'Lead');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=4090246971290715&ev=PageView&noscript=1"
 /></noscript>
-End Meta Pixel Code -->
+<!-- End Meta Pixel Code -->
+<?php endif; ?>
 	
 <!-- Microsoft clarity -->
 	

@@ -1,4 +1,4 @@
- <?php
+<?php
 /**
  * Homepage hero (1-3.png) + layout cleanup. Does not edit page content.
  */
@@ -73,7 +73,7 @@ function lh_newastro_filter_home_content( $content ) {
 	);
 
 	$content = preg_replace(
-		'/(id="our-services"[^>]*class=")/i',
+		'/(?<![\w-])(id="our-services"[^>]*class=")/i',
 		'$1lh-svc-grid ',
 		$content,
 		1
@@ -154,3 +154,23 @@ function lh_newastro_render_home_hero() {
 	</section>
 	<?php
 }
+
+function lh_newastro_enqueue_home_book_link() {
+	if ( ! lh_newastro_is_front() ) {
+		return;
+	}
+
+	$js = get_template_directory() . '/js/lh-home-book.js';
+	if ( ! file_exists( $js ) ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'lh-home-book',
+		get_template_directory_uri() . '/js/lh-home-book.js',
+		array(),
+		filemtime( $js ),
+		true
+	);
+}
+add_action( 'wp_enqueue_scripts', 'lh_newastro_enqueue_home_book_link', 41 );

@@ -419,4 +419,75 @@ body.home #our-services .cws_vc_shortcode_button {
 	body.home #our-services .wpb_wrapper::after {
 		opacity: 1;
 	}
+
+	/* First card title wrapper must not become the services grid. */
+	body.home #our-services .wpb_text_column .lh-svc-grid,
+	body.home .lh-svc-grid .wpb_text_column .lh-svc-grid {
+		display: block !important;
+		grid-template-columns: none !important;
+		flex-wrap: nowrap !important;
+		align-items: center !important;
+		justify-content: center !important;
+		gap: 0 !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		width: 100% !important;
+		max-width: none !important;
+		background: none !important;
+	}
+
+	body.home #our-services > .wpb_column:first-child .wpb_text_column,
+	body.home .lh-svc-grid > .wpb_column:first-child .wpb_text_column {
+		bottom: 58px !important;
+		padding: 0 14px !important;
+	}
+
+	body.home #our-services .wpb_text_column .widgettitle,
+	body.home .lh-svc-grid .wpb_text_column .widgettitle {
+		display: block !important;
+		position: static !important;
+		flex: none !important;
+		width: 100% !important;
+		margin: 0 !important;
+		white-space: normal !important;
+		text-align: center !important;
+	}
+
+	body.home #our-services > .wpb_column:first-child .wpb_text_column br,
+	body.home .lh-svc-grid > .wpb_column:first-child .wpb_text_column br {
+		display: none !important;
+	}
+
+	body.home #our-services > .wpb_column:first-child .wpb_text_column p,
+	body.home #our-services > .wpb_column:first-child .widgettitle,
+	body.home #our-services > .wpb_column:first-child .wpb_text_column span,
+	body.home #our-services > .wpb_column:first-child .wpb_text_column strong,
+	body.home .lh-svc-grid > .wpb_column:first-child .wpb_text_column p,
+	body.home .lh-svc-grid > .wpb_column:first-child .widgettitle,
+	body.home .lh-svc-grid > .wpb_column:first-child .wpb_text_column span,
+	body.home .lh-svc-grid > .wpb_column:first-child .wpb_text_column strong {
+		display: block !important;
+		width: 100% !important;
+		color: #fffaf0 !important;
+		font-family: "Source Sans 3", "Segoe UI", sans-serif !important;
+		font-size: 0.92rem !important;
+		font-weight: 700 !important;
+		line-height: 1.3 !important;
+		letter-spacing: normal !important;
+		word-spacing: normal !important;
+		text-transform: none !important;
+		white-space: normal !important;
+		word-break: normal !important;
+		text-align: center !important;
+		text-shadow: none !important;
+		background: none !important;
+	}
+
+	body.home #our-services > .wpb_column:first-child .widgettitle::before,
+	body.home #our-services > .wpb_column:first-child .widgettitle::after,
+	body.home .lh-svc-grid > .wpb_column:first-child .widgettitle::before,
+	body.home .lh-svc-grid > .wpb_column:first-child .widgettitle::after {
+		content: none !important;
+		display: none !important;
+	}
 }
