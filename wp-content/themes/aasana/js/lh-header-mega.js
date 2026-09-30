@@ -316,6 +316,42 @@
 		});
 	}
 
+	function findHeaderBoxHost(cont) {
+		return cont.querySelector('.header_zone') || cont.querySelector('.header_container') || cont;
+	}
+
+	function releaseHeaderBoxToFlow(cont) {
+		if (!mobileHeaderHome || !mobileHeaderHome.ph || !mobileHeaderHome.ph.parentNode) {
+			return;
+		}
+		var box = cont.querySelector('.header_box');
+		if (!box) {
+			return;
+		}
+		mobileHeaderHome.headerBox = box;
+		mobileHeaderHome.headerBoxHost = box.parentNode;
+		mobileHeaderHome.headerBoxNext = box.nextSibling;
+		mobileHeaderHome.ph.parentNode.insertBefore(box, mobileHeaderHome.ph.nextSibling);
+		box.classList.add('lh-header-box-flow');
+	}
+
+	function restoreHeaderBoxToCont(cont) {
+		if (!mobileHeaderHome || !mobileHeaderHome.headerBox) {
+			return;
+		}
+		var box = mobileHeaderHome.headerBox;
+		var host = mobileHeaderHome.headerBoxHost || findHeaderBoxHost(cont);
+		if (mobileHeaderHome.headerBoxNext && mobileHeaderHome.headerBoxNext.parentNode === host) {
+			host.insertBefore(box, mobileHeaderHome.headerBoxNext);
+		} else {
+			host.appendChild(box);
+		}
+		box.classList.remove('lh-header-box-flow');
+		mobileHeaderHome.headerBox = null;
+		mobileHeaderHome.headerBoxHost = null;
+		mobileHeaderHome.headerBoxNext = null;
+	}
+
 	function unpinMobileHeader() {
 		var cont = document.querySelector('.header_cont.lh-mobile-pinned');
 		if (!cont) {
@@ -323,6 +359,7 @@
 			return;
 		}
 		clearPinnedHeaderStyles(cont);
+		restoreHeaderBoxToCont(cont);
 		cont.classList.remove('lh-mobile-pinned');
 		if (mobileHeaderHome && mobileHeaderHome.parent) {
 			if (mobileHeaderHome.ph && mobileHeaderHome.ph.parentNode) {
@@ -351,11 +388,15 @@
 			mobileHeaderHome = {
 				parent: cont.parentNode,
 				next: cont.nextSibling,
-				ph: document.createElement('div')
+				ph: document.createElement('div'),
+				headerBox: null,
+				headerBoxHost: null,
+				headerBoxNext: null
 			};
 			mobileHeaderHome.ph.className = 'lh-mobile-header-ph';
 			mobileHeaderHome.ph.setAttribute('aria-hidden', 'true');
 			cont.parentNode.insertBefore(mobileHeaderHome.ph, cont);
+			releaseHeaderBoxToFlow(cont);
 			var adminBar = document.getElementById('wpadminbar');
 			if (adminBar && adminBar.parentNode === document.body) {
 				document.body.insertBefore(cont, adminBar.nextSibling);
@@ -363,6 +404,8 @@
 				document.body.insertBefore(cont, document.body.firstChild);
 			}
 			cont.classList.add('lh-mobile-pinned');
+		} else if (!document.querySelector('.lh-header-box-flow') && cont.querySelector('.header_box')) {
+			releaseHeaderBoxToFlow(cont);
 		}
 		var h = Math.round(headerBarHeight(cont));
 		document.documentElement.style.setProperty('--lh-mobile-header-h', h + 'px');
@@ -456,6 +499,56 @@
 		}, true);
 	}
 
+	function bindMobileMenuToggle() {
+		if (bindMobileMenuToggle.bound) {
+			return;
+		}
+		bindMobileMenuToggle.bound = true;
+
+		document.addEventListener('click', function (e) {
+			if (isDesktop()) {
+				return;
+			}
+			var btn = e.target.closest('.mobile_menu_switcher, .mobile_menu_hamburger');
+			if (!btn || btn.classList.contains('deactive') || btn.classList.contains('close_side_panel')) {
+				return;
+			}
+			var cont = btn.closest('.header_cont');
+			if (!cont) {
+				return;
+			}
+			var panel = cont.querySelector('.mobile_menu_wrapper .mobile_menu_container');
+			if (!panel) {
+				return;
+			}
+
+			/* Own toggle so menu still opens after we move .header_cont to body. */
+			e.preventDefault();
+			e.stopPropagation();
+			if (typeof e.stopImmediatePropagation === 'function') {
+				e.stopImmediatePropagation();
+			}
+
+			var isHidden = panel.style.display === 'none' ||
+				(!panel.style.display && window.getComputedStyle(panel).display === 'none');
+			if (window.jQuery) {
+				window.jQuery(panel).stop(true, true);
+				if (isHidden) {
+					window.jQuery(panel).slideDown(220);
+					btn.classList.add('is-active');
+				} else {
+					window.jQuery(panel).slideUp(180);
+					btn.classList.remove('is-active');
+				}
+			} else {
+				panel.style.setProperty('display', isHidden ? 'block' : 'none', 'important');
+				btn.classList.toggle('is-active', isHidden);
+			}
+
+			window.setTimeout(pinMobileHeaderToViewport, 260);
+		}, true);
+	}
+
 	function init() {
 		ensureMobileClass();
 		disableMobileStickyClone();
@@ -465,6 +558,7 @@
 		hideDesktopBack();
 		packAllMenus();
 		bindMobileParentToggle();
+		bindMobileMenuToggle();
 	}
 
 	window.addEventListener('resize', function () {

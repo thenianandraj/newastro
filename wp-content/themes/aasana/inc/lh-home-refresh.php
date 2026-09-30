@@ -12,7 +12,7 @@ function lh_newastro_is_front() {
 }
 
 function lh_newastro_hero_image_url() {
-	return content_url( 'uploads/2026/09/1-3.png' );
+	return content_url( 'uploads/2026/09/1-3.avif' );
 }
 
 function lh_newastro_enqueue_home_assets() {
@@ -20,67 +20,7 @@ function lh_newastro_enqueue_home_assets() {
 		return;
 	}
 
-	wp_enqueue_style(
-		'lh-cormorant',
-		'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Source+Sans+3:wght@400;500;600;700&display=swap',
-		array(),
-		null
-	);
-
-	wp_enqueue_style(
-		'lh-home-refresh',
-		get_template_directory_uri() . '/css/lh-home-refresh.css',
-		array( 'cws_main' ),
-		filemtime( get_template_directory() . '/css/lh-home-refresh.css' )
-	);
-
-	$mid = get_template_directory() . '/css/lh-home-mid.css';
-	wp_enqueue_style(
-		'lh-home-mid',
-		get_template_directory_uri() . '/css/lh-home-mid.css',
-		array( 'lh-home-refresh' ),
-		file_exists( $mid ) ? filemtime( $mid ) : '1.0'
-	);
-
-	$trust_css = get_template_directory() . '/css/lh-home-trust.css';
-	wp_enqueue_style(
-		'lh-home-trust',
-		get_template_directory_uri() . '/css/lh-home-trust.css',
-		array( 'lh-home-mid' ),
-		file_exists( $trust_css ) ? filemtime( $trust_css ) : '1.0'
-	);
-
-	$svc_css = get_template_directory() . '/css/lh-home-services.css';
-	wp_enqueue_style(
-		'lh-home-services',
-		get_template_directory_uri() . '/css/lh-home-services.css',
-		array( 'lh-home-trust' ),
-		file_exists( $svc_css ) ? filemtime( $svc_css ) : '1.0'
-	);
-
-	$about_css = get_template_directory() . '/css/lh-home-about.css';
-	wp_enqueue_style(
-		'lh-home-about',
-		get_template_directory_uri() . '/css/lh-home-about.css',
-		array( 'lh-home-services' ),
-		file_exists( $about_css ) ? filemtime( $about_css ) : '1.0'
-	);
-
-	$reviews_css = get_template_directory() . '/css/lh-home-reviews.css';
-	wp_enqueue_style(
-		'lh-home-reviews',
-		get_template_directory_uri() . '/css/lh-home-reviews.css',
-		array( 'lh-home-about' ),
-		file_exists( $reviews_css ) ? filemtime( $reviews_css ) : '1.0'
-	);
-
-	$more_css = get_template_directory() . '/css/lh-home-more.css';
-	wp_enqueue_style(
-		'lh-home-more',
-		get_template_directory_uri() . '/css/lh-home-more.css',
-		array( 'lh-home-reviews' ),
-		file_exists( $more_css ) ? filemtime( $more_css ) : '1.0'
-	);
+	// Fonts + CSS bundle: inc/lh-perf-assets.php (one font request, one home CSS file).
 
 	$trust_js = get_template_directory() . '/js/lh-home-trust.js';
 	wp_enqueue_script(
@@ -133,7 +73,7 @@ function lh_newastro_filter_home_content( $content ) {
 	);
 
 	$content = preg_replace(
-		'/(id="our-services"[^>]*class=")/i',
+		'/(?<![\w-])(id="our-services"[^>]*class=")/i',
 		'$1lh-svc-grid ',
 		$content,
 		1
@@ -214,3 +154,23 @@ function lh_newastro_render_home_hero() {
 	</section>
 	<?php
 }
+
+function lh_newastro_enqueue_home_book_link() {
+	if ( ! lh_newastro_is_front() ) {
+		return;
+	}
+
+	$js = get_template_directory() . '/js/lh-home-book.js';
+	if ( ! file_exists( $js ) ) {
+		return;
+	}
+
+	wp_enqueue_script(
+		'lh-home-book',
+		get_template_directory_uri() . '/js/lh-home-book.js',
+		array(),
+		filemtime( $js ),
+		true
+	);
+}
+add_action( 'wp_enqueue_scripts', 'lh_newastro_enqueue_home_book_link', 41 );
