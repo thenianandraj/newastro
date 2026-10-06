@@ -8240,5 +8240,7 @@ require_once get_template_directory() . '/inc/lh-footer.php';
 require_once get_template_directory() . '/inc/lh-header-menu.php';
 require_once get_template_directory() . '/inc/lh-service-page.php';
 require_once get_template_directory() . '/inc/lh-conditional-assets.php';
+require_once get_template_directory() . '/inc/lh-product-form.php';
+require_once get_template_directory() . '/inc/lh-datetime-typed.php';
 
 ?>

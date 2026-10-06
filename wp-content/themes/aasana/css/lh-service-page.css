@@ -4,7 +4,7 @@
 body.lh-service-page .page_content > .container,
 body.lh-service-page .wpb-content--blank .entry-content,
 body.lh-service-page #main > .wpb-content-wrapper {
-	max-width: 1180px;
+	max-width: 1360px;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 16px;
@@ -53,9 +53,11 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-layer {
 @media screen and (min-width: 992px) {
 	body.lh-service-page .wpb-content-wrapper:has(form.cart) {
 		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(320px, 480px);
+		width: 100%;
+		margin-inline: 0;
+		grid-template-columns: minmax(0, 1fr) minmax(420px, 480px);
 		grid-auto-rows: min-content;
-		column-gap: 36px;
+		column-gap: 48px;
 		row-gap: 0;
 		align-items: start;
 	}
@@ -105,17 +107,19 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-layer {
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
-		gap: 12px;
+		justify-self: end;
+		gap: 0;
 		position: static;
 		align-self: start;
 		z-index: 3;
 		width: 100%;
 		min-width: 0;
-		padding: 18px 16px 20px;
-		border-radius: 18px;
-		border: 1px solid rgba(212, 175, 55, 0.32);
-		background: linear-gradient(180deg, rgba(12, 28, 64, 0.92) 0%, rgba(4, 14, 36, 0.96) 100%);
-		box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+		padding: 26px 22px 20px;
+		overflow: hidden;
+		border-radius: 26px;
+		border: 1px solid rgba(212, 175, 55, 0.28);
+		background: #ffffff;
+		box-shadow: 0 22px 50px rgba(0, 0, 0, 0.28);
 		box-sizing: border-box;
 	}
 
@@ -133,8 +137,8 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-layer {
 		display: grid !important;
 		grid-template-columns: 1fr 1fr;
 		column-gap: 14px;
-		row-gap: 14px;
-		align-items: end;
+		row-gap: 10px;
+		align-items: start;
 		width: 100%;
 	}
 
@@ -150,26 +154,26 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-layer {
 		box-sizing: border-box !important;
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-end;
+		justify-content: flex-start;
 	}
 
 	body.lh-service-page .wpb-content-wrapper:has(form.cart) .wpb_raw_code:has(form.cart) .wcpa_field_label,
 	body.lh-service-page .wpb-content-wrapper:has(form.cart) .wpb_raw_code:has(form.cart) .wcpa_field_wrap > label {
 		display: block !important;
-		min-height: 2.5em;
-		margin: 0 0 6px !important;
+		min-height: 0;
+		margin: 0 0 2px !important;
 		font-size: 12px !important;
 		line-height: 1.3 !important;
 		font-weight: 600 !important;
-		color: rgba(245, 247, 251, 0.92) !important;
+		color: #1a2744 !important;
 	}
 
 	body.lh-service-page .wpb-content-wrapper:has(form.cart) .wpb_raw_code:has(form.cart) .wcpa_field_wrap input:not([type="checkbox"]):not([type="radio"]),
 	body.lh-service-page .wpb-content-wrapper:has(form.cart) .wpb_raw_code:has(form.cart) .wcpa_field_wrap select {
 		width: 100% !important;
 		max-width: 100% !important;
-		height: 40px !important;
-		min-height: 40px !important;
+		height: 46px !important;
+		min-height: 46px !important;
 		box-sizing: border-box !important;
 		font-size: 13px !important;
 		line-height: 1.2 !important;
@@ -188,8 +192,8 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-layer {
 	body.lh-service-page .wpb-content-wrapper:has(form.cart) .wpb_raw_code:has(form.cart) .wcpa_field_wrap input[type="datetime-local"],
 	body.lh-service-page .wpb-content-wrapper:has(form.cart) .wpb_raw_code:has(form.cart) .wcpa_field_wrap input[type="time"] {
 		font-size: 12px !important;
-		padding-left: 8px !important;
-		padding-right: 6px !important;
+		padding-left: 38px !important;
+		padding-right: 8px !important;
 		white-space: nowrap !important;
 	}
 
@@ -279,13 +283,31 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-layer {
 		display: block !important;
 	}
 
+	/* Reset WPBakery negative margins on mobile to prevent clipping the card */
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .vc_row,
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .wpb_column,
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .vc_column-inner,
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .wpb_wrapper {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		box-sizing: border-box !important;
+	}
+
 	body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col {
 		position: static !important;
 		display: block !important;
 		width: 100% !important;
 		max-width: 100% !important;
 		margin: 18px 0 8px !important;
-		padding: 16px 14px 18px !important;
+		padding: 20px 16px 16px !important;
+		overflow: hidden !important;
+		border-radius: 22px !important;
+		border: 1px solid rgba(212, 175, 55, 0.28) !important;
+		background: #ffffff !important;
 		box-sizing: border-box !important;
 	}
 
@@ -293,6 +315,19 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-layer {
 		position: static !important;
 		width: 100% !important;
 		max-width: 100% !important;
+		box-sizing: border-box !important;
+	}
+
+	/* Lock ALL intermediate WCPA wrappers inside the card to card's width */
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_form_outer,
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_wrap,
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_section_body,
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col form.cart {
+		width: 100% !important;
+		max-width: 100% !important;
+		box-sizing: border-box !important;
+		padding: 0 !important;
+		margin: 0 !important;
 	}
 
 	body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-form-heading,
@@ -301,11 +336,13 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-layer {
 	}
 
 	body.lh-service-page .wpb-content-wrapper:has(form.cart) .wpb_raw_code:has(form.cart) .wcpa_section_body {
-		display: block !important;
+		display: grid !important;
+		grid-template-columns: 1fr;
+		row-gap: 12px;
 	}
 
 	body.lh-service-page .wpb-content-wrapper:has(form.cart) .wpb_raw_code:has(form.cart) .wcpa_row {
-		display: block !important;
+		display: contents !important;
 	}
 
 	body.lh-service-page .wpb-content-wrapper:has(form.cart) .wpb_raw_code:has(form.cart) .wcpa-col-4,
@@ -315,6 +352,50 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-layer {
 		max-width: 100% !important;
 		flex: 0 0 100% !important;
 		grid-column: auto;
+		box-sizing: border-box !important;
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	/* Small mobile: inputs must not overflow the card (overflow:hidden clips them) */
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_field_wrap input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_field_wrap select,
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_field_wrap textarea {
+		width: 100% !important;
+		max-width: 100% !important;
+		box-sizing: border-box !important;
+	}
+
+	/* Price tag: force centered on mobile */
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_type_header {
+		display: flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+		width: 100% !important;
+	}
+
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col form.cart h3.wcpa_field,
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col form.cart h3 {
+		display: inline-flex !important;
+		margin: 0 auto !important;
+	}
+
+	/* Force labels to show on mobile (overriding theme/WC hidden classes) */
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .wpb_raw_code:has(form.cart) .wcpa_field_label,
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .wpb_raw_code:has(form.cart) .wcpa_field_wrap > label,
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .wpb_raw_code:has(form.cart) .wcpa_field_label span,
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .wpb_raw_code:has(form.cart) .wcpa_field_wrap > label span:not(.wcpa_required_ast) {
+		display: inline-block !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+		color: #1a2744 !important;
+		font-size: 13px !important;
+		height: auto !important;
+		width: auto !important;
+		overflow: visible !important;
+		clip: auto !important;
+		clip-path: none !important;
+		text-indent: 0 !important;
 	}
 
 	/* Long service titles: don’t blow past viewport */
@@ -523,8 +604,9 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-content:not(:has(f
 
 	body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-content:not(:has(form.cart)) .widgettitle span {
 		grid-column: 2;
-		font-size: clamp(1.65rem, 3.2vw, 2.35rem) !important;
-		line-height: 1.2 !important;
+		font-size: clamp(1.2rem, 1.7vw, 1.55rem) !important;
+		line-height: 1.22 !important;
+		letter-spacing: 0.04em !important;
 	}
 }
 
@@ -532,7 +614,7 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) .wp-block-audio {
 	position: relative;
 	z-index: 5;
 	width: 100% !important;
-	max-width: 520px !important;
+	max-width: 100% !important;
 	margin: 8px 0 20px !important;
 	padding: 14px 16px !important;
 	border-radius: 16px;
@@ -557,10 +639,12 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) #process p,
 body.lh-service-page .wpb-content-wrapper:has(form.cart) #account-details,
 body.lh-service-page .wpb-content-wrapper:has(form.cart) #account-details p {
 	font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif !important;
-	font-size: clamp(0.95rem, 1.4vw, 1.05rem) !important;
+	font-size: 0.9375rem !important;
 	font-weight: 400 !important;
-	line-height: 1.75 !important;
-	color: rgba(245, 247, 251, 0.88) !important;
+	line-height: 1.65 !important;
+	color: #f3f6fb !important;
+	max-width: 100% !important;
+	width: 100% !important;
 	text-align: left !important;
 	word-spacing: normal !important;
 	letter-spacing: normal !important;
@@ -571,6 +655,62 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) #process strong,
 body.lh-service-page .wpb-content-wrapper:has(form.cart) #account-details strong {
 	color: #e8c547 !important;
 	font-weight: 600 !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-content:not(:has(form.cart)) h2,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) #service-row h2 {
+	font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif !important;
+	font-size: clamp(1.2rem, 1.5vw, 1.4rem) !important;
+	font-weight: 700 !important;
+	line-height: 1.35 !important;
+	letter-spacing: 0 !important;
+	margin: 0.4em 0 0.55em !important;
+	max-width: 100% !important;
+	width: 100% !important;
+	text-align: left !important;
+	color: #ffffff !important;
+}
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-content:not(:has(form.cart)) .wpb_wrapper > p {
+	font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif !important;
+	font-size: 0.9375rem !important;
+	font-weight: 400 !important;
+	line-height: 1.65 !important;
+	color: #f3f6fb !important;
+	max-width: 100% !important;
+	width: 100% !important;
+	margin: 0 0 0.7em !important;
+	text-align: left !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-content:not(:has(form.cart)),
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-content:not(:has(form.cart)) .cws_textmodule,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-content:not(:has(form.cart)) .cws_textmodule_content,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-content:not(:has(form.cart)) .cws_textmodule_content p,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-content:not(:has(form.cart)) .text_aligncenter,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-content:not(:has(form.cart)) .wpb_text_column,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-content:not(:has(form.cart)) .abt_hd,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-content:not(:has(form.cart)) .wpb_raw_code,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-content:not(:has(form.cart)) .wpb_raw_code div,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .cws-content:not(:has(form.cart)) .aligncenter,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) #service-row {
+	width: 100% !important;
+	max-width: 100% !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	text-align: left !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) #service-row p,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) #process p,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) #account-details p {
+	margin: 0 0 0.7em !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .lh-terms {
+	color: #c8962e !important;
+	font-weight: 700 !important;
+	text-decoration: underline !important;
+	text-underline-offset: 2px;
 }
 
 body.lh-service-page .wpb-content-wrapper:has(form.cart) #process,
@@ -588,7 +728,7 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) #account-details h3,
 body.lh-service-page .wpb-content-wrapper:has(form.cart) #account-details .widgettitle {
 	margin: 0 0 12px !important;
 	font-family: "Cormorant Garamond", Georgia, serif !important;
-	font-size: 1.35rem !important;
+	font-size: 1.15rem !important;
 	font-weight: 700 !important;
 	letter-spacing: 0.08em !important;
 	text-transform: uppercase !important;
@@ -751,28 +891,49 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) .wp-block-buttons .wp-b
 	color: #000b1e !important;
 }
 
-/* Form Add to Cart — match navy/gold theme (not orange) */
-body.lh-service-page .wpb-content-wrapper:has(form.cart) form.cart .single_add_to_cart_button,
-body.lh-service-page .wpb-content-wrapper:has(form.cart) form.cart button[type="submit"],
-body.lh-service-page .wpb-content-wrapper:has(form.cart) form.cart .button {
+/* Form Add to Cart — full-width gold pill inside the birth-details card only */
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col form.cart .single_add_to_cart_button,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col form.cart button[type="submit"] {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	gap: 8px !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	height: 52px !important;
+	margin: 0 !important;
+	padding: 0 18px !important;
 	border-radius: 999px !important;
-	border: 1px solid #d4af37 !important;
-	background: #d4af37 !important;
-	background-color: #d4af37 !important;
-	background-image: none !important;
-	color: #000b1e !important;
+	border: 0 !important;
+	background: linear-gradient(180deg, #f6dc6a 0%, #e0a825 100%) !important;
+	background-color: #e8c547 !important;
+	background-image: linear-gradient(180deg, #f6dc6a 0%, #e0a825 100%) !important;
+	color: #1a1208 !important;
 	font-family: "Source Sans 3", "Segoe UI", sans-serif !important;
+	font-size: 16px !important;
 	font-weight: 700 !important;
-	letter-spacing: 0.04em !important;
-	box-shadow: none !important;
+	line-height: 1 !important;
+	letter-spacing: 0.01em !important;
+	box-shadow: 0 8px 18px rgba(224, 168, 37, 0.28) !important;
 	text-shadow: none !important;
+	float: none !important;
 }
 
-body.lh-service-page .wpb-content-wrapper:has(form.cart) form.cart .single_add_to_cart_button:hover,
-body.lh-service-page .wpb-content-wrapper:has(form.cart) form.cart button[type="submit"]:hover,
-body.lh-service-page .wpb-content-wrapper:has(form.cart) form.cart .button:hover {
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col form.cart .single_add_to_cart_button::before,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col form.cart button[type="submit"]::before {
+	content: "" !important;
+	display: block !important;
+	width: 18px !important;
+	height: 18px !important;
+	margin: 0 !important;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a1208' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='9' cy='20' r='1.2'/%3E%3Ccircle cx='17' cy='20' r='1.2'/%3E%3Cpath d='M3 4h2l2.2 11h11.2l1.8-7H7'/%3E%3C/svg%3E") center / contain no-repeat !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col form.cart .single_add_to_cart_button:hover,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col form.cart button[type="submit"]:hover {
 	background: #e8c547 !important;
 	background-color: #e8c547 !important;
+	background-image: none !important;
 	border-color: #e8c547 !important;
 	color: #000b1e !important;
 }
@@ -780,8 +941,30 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) form.cart .button:hover
 body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-form-heading,
 body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-form-price,
 body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .cws_textmodule {
-	margin: 0 0 8px !important;
+	margin: 0 !important;
 	text-align: center !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .lh-form-heading,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .lh-form-heading .cws_textmodule_wrapper,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .lh-form-heading .cws_textmodule_text,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .lh-form-heading .cws_textmodule_titles,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .lh-form-heading .widgettitle {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wpb_raw_code,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col form.cart,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_form_outer,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_type_header {
+	margin-top: 0 !important;
+	padding-top: 0 !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_type_header {
+	margin: 6px 0 0 !important;
+	padding: 0 !important;
 }
 
 body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-form-heading .cws_textmodule_icon_wrapper,
@@ -793,21 +976,37 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .cws_t
 
 body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-form-heading .widgettitle,
 body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-form-heading .widgettitle span {
-	display: block !important;
+	display: flex !important;
 	margin: 0 !important;
-	font-family: "Cormorant Garamond", Georgia, serif !important;
-	font-size: 1.15rem !important;
+	align-items: center !important;
+	justify-content: center !important;
+	gap: 12px !important;
+	font-family: "Source Sans 3", "Segoe UI", sans-serif !important;
+	font-size: 0.92rem !important;
 	font-weight: 700 !important;
-	letter-spacing: 0.04em !important;
+	letter-spacing: 0.14em !important;
 	text-transform: uppercase !important;
 	line-height: 1.3 !important;
-	color: #ffffff !important;
+	color: #1a3a6b !important;
 	background: none !important;
 	text-align: center !important;
 }
 
 body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-form-heading .widgettitle::before,
-body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-form-heading .widgettitle::after,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-form-heading .widgettitle::after {
+	content: "" !important;
+	display: block !important;
+	flex: 0 0 42px !important;
+	width: 42px !important;
+	height: 2px !important;
+	border-radius: 999px !important;
+	background: linear-gradient(90deg, rgba(240, 211, 90, 0), #f0d35a) !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-form-heading .widgettitle::after {
+	background: linear-gradient(90deg, #f0d35a, rgba(240, 211, 90, 0)) !important;
+}
+
 body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-form-price .widgettitle::before,
 body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-form-price .widgettitle::after {
 	content: none !important;
@@ -844,6 +1043,186 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wpb_r
 	border: 0;
 	background: none;
 	box-shadow: none;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col form.cart {
+	width: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	overflow: visible !important;
+	float: none !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_row,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_form_item {
+	width: 100% !important;
+	max-width: 100% !important;
+	height: auto !important;
+	float: none !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_type_header {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	margin: 6px 0 0 !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col form.cart h3,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col form.cart h3.wcpa_field {
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	gap: 8px !important;
+	width: auto !important;
+	max-width: 100% !important;
+	margin: 0 auto !important;
+	padding: 8px 22px !important;
+	border-radius: 999px !important;
+	font-family: "Source Sans 3", "Segoe UI", sans-serif !important;
+	font-size: 0.98rem !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.01em !important;
+	line-height: 1.2 !important;
+	text-transform: none !important;
+	text-align: center !important;
+	color: #1a1208 !important;
+	background: linear-gradient(180deg, #f6dc6a 0%, #e0a825 100%) !important;
+	box-shadow: 0 8px 16px rgba(224, 168, 37, 0.22) !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col form.cart h3.wcpa_field::before {
+	content: "" !important;
+	display: block !important;
+	width: 16px !important;
+	height: 16px !important;
+	flex: 0 0 16px !important;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a1208' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12.5 12 4h7v7l-9.2 9.2a1.5 1.5 0 0 1-2.1 0L3 13.6a1.5 1.5 0 0 1 0-2.1z'/%3E%3Ccircle cx='16.2' cy='7.8' r='1.1'/%3E%3C/svg%3E") center / contain no-repeat !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_required_ast {
+	color: #ff5a6a !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_field_wrap input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_field_wrap select,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_field_wrap textarea {
+	background-color: #ffffff !important;
+	background-repeat: no-repeat !important;
+	background-position: 12px center !important;
+	background-size: 16px 16px !important;
+	border: 1px solid #d7e0ec !important;
+	border-radius: 12px !important;
+	color: #1a2744 !important;
+	box-shadow: none !important;
+	height: 46px !important;
+	min-height: 46px !important;
+	padding-left: 38px !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_field_wrap input::placeholder {
+	color: #8b97a8 !important;
+	font-weight: 500 !important;
+	opacity: 1 !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_field_wrap select {
+	appearance: none !important;
+	padding-right: 32px !important;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667a94' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") !important;
+	background-repeat: no-repeat !important;
+	background-position: right 12px center !important;
+	background-size: 14px 14px !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col [data-lh-field="name"] input,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col [data-lh-field="father"] input {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667a94' stroke-width='1.7' stroke-linecap='round'%3E%3Ccircle cx='12' cy='8' r='3.2'/%3E%3Cpath d='M5 19c1.1-3.2 3.5-4.8 7-4.8s5.9 1.6 7 4.8'/%3E%3C/svg%3E") !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col [data-lh-field="gender"] select {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667a94' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667a94' stroke-width='1.7' stroke-linecap='round'%3E%3Ccircle cx='10' cy='14' r='3.2'/%3E%3Cpath d='M12.3 11.7 18 6M18 6h-3.4M18 6v3.4'/%3E%3C/svg%3E") !important;
+	background-position: right 12px center, 12px center !important;
+	background-size: 14px 14px, 16px 16px !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col [data-lh-field="date"] input {
+	color-scheme: light;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667a94' stroke-width='1.7' stroke-linecap='round'%3E%3Crect x='4' y='5' width='16' height='15' rx='2'/%3E%3Cpath d='M4 10h16M8 3.5V6.5M16 3.5V6.5'/%3E%3C/svg%3E") !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col [data-lh-field="place"] input {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667a94' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 21s6-5.1 6-9.3A6 6 0 0 0 6 11.7C6 15.9 12 21 12 21z'/%3E%3Ccircle cx='12' cy='11.4' r='1.8'/%3E%3C/svg%3E") !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col [data-lh-field="language"] select {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667a94' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667a94' stroke-width='1.7'%3E%3Ccircle cx='12' cy='12' r='8'/%3E%3Cpath d='M4 12h16M12 4c2.2 2.4 3.3 5 3.3 8s-1.1 5.6-3.3 8c-2.2-2.4-3.3-5-3.3-8s1.1-5.6 3.3-8z'/%3E%3C/svg%3E") !important;
+	background-position: right 12px center, 12px center !important;
+	background-size: 14px 14px, 16px 16px !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col [data-lh-field="email"] input {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667a94' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3.5' y='5.5' width='17' height='13' rx='2'/%3E%3Cpath d='M4.5 7l7.5 6 7.5-6'/%3E%3C/svg%3E") !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col [data-lh-field="mobile"] input {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667a94' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 3.5h2.4l1.2 3-1.6 1.2a9.5 9.5 0 0 0 4.3 4.3L15.5 10l3 1.2V14a1.6 1.6 0 0 1-1.7 1.6A12.4 12.4 0 0 1 6.4 6.2 1.6 1.6 0 0 1 8 3.5z'/%3E%3C/svg%3E") !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_type_checkbox-group,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_checkbox,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_checkbox label,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_type_checkbox-group label {
+	display: flex !important;
+	flex-direction: row !important;
+	flex-wrap: nowrap !important;
+	align-items: center !important;
+	justify-content: flex-start !important;
+	gap: 8px !important;
+	width: auto !important;
+	max-width: 100% !important;
+	height: auto !important;
+	min-height: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	color: #1a2744 !important;
+	font-size: 13px !important;
+	line-height: 1.3 !important;
+	white-space: nowrap !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_checkbox input,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_checkbox_custom,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_checkbox label span {
+	display: inline-flex !important;
+	align-items: center !important;
+	width: auto !important;
+	margin: 0 !important;
+	float: none !important;
+	white-space: nowrap !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col form.cart::after {
+	content: none !important;
+	display: none !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_field_wrap input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):focus,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_field_wrap select:focus,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_field_wrap textarea:focus {
+	border-color: #d4af37 !important;
+	outline: none !important;
+	box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.28) !important;
+}
+
+@media screen and (max-width: 991px) {
+	body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .lh-form-heading {
+		margin: 0 0 6px !important;
+		padding: 0 !important;
+	}
 }
 
 /*
@@ -922,4 +1301,135 @@ body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wpb_r
 		overflow: visible !important;
 		box-sizing: border-box !important;
 	}
+}
+
+/* WCPA radio groups (e.g. AM / PM) inside the booking card: two pill options. */
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_type_radio-group .wcpa_group_field {
+	display: flex !important;
+	flex-wrap: nowrap !important;
+	gap: 10px !important;
+	margin: 0 !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_type_radio-group .wcpa_radio {
+	flex: 1 1 0 !important;
+	min-width: 0 !important;
+	margin: 0 !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_type_radio-group .wcpa_radio label {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	gap: 8px !important;
+	width: 100% !important;
+	height: 46px !important;
+	margin: 0 !important;
+	padding: 0 12px !important;
+	border: 1px solid #d7e0ec !important;
+	border-radius: 12px !important;
+	background: #ffffff !important;
+	color: #1a2744 !important;
+	font-size: 14px !important;
+	font-weight: 600 !important;
+	line-height: 1 !important;
+	box-sizing: border-box !important;
+	cursor: pointer !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_type_radio-group .wcpa_radio label span {
+	color: #1a2744 !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_type_radio-group .wcpa_radio .wcpa_radio_custom {
+	margin: 0 !important;
+	border-color: #b8c4d6 !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_type_radio-group .wcpa_radio label:has(input:checked) {
+	border-color: #d4af37 !important;
+	background: rgba(212, 175, 55, 0.14) !important;
+	box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2) !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_type_radio-group .wcpa_radio input:checked ~ .wcpa_radio_custom {
+	border-color: #d4af37 !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_type_radio-group .wcpa_radio input:checked ~ .wcpa_radio_custom::after {
+	background-color: #d4af37 !important;
+}
+
+/* WCPA time field: typed hh:mm with an inline AM / PM toggle (built in lh-service-page.js). */
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_date_field_wrap.lh-time-ready {
+	position: relative !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_date_field_wrap.lh-time-ready > input.wcpa_field,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_date_field_wrap.lh-time-ready > input.flatpickr-mobile,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_date_field_wrap.lh-time-ready > .wcpa_reset_field {
+	display: none !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_field_wrap input.lh-time-text {
+	width: 100% !important;
+	max-width: 100% !important;
+	box-sizing: border-box !important;
+	padding-right: 104px !important;
+	font-size: 14px !important;
+	letter-spacing: 0.04em !important;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667a94' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='8'/%3E%3Cpath d='M12 8v4.2l2.8 1.8'/%3E%3C/svg%3E") !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_field_wrap input.lh-time-text.lh-time-invalid,
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .wcpa_has_error input.lh-time-text {
+	border-color: #e23b3b !important;
+	box-shadow: 0 0 0 3px rgba(226, 59, 59, 0.2) !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .lh-time-ready .lh-ampm {
+	position: absolute !important;
+	top: 50% !important;
+	right: 6px !important;
+	transform: translateY(-50%) !important;
+	display: flex !important;
+	gap: 2px !important;
+	margin: 0 !important;
+	padding: 3px !important;
+	border: 1px solid #e3e9f2 !important;
+	border-radius: 9px !important;
+	background: #f1f4f9 !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .lh-time-ready .lh-ampm button {
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	min-width: 42px !important;
+	width: auto !important;
+	height: 30px !important;
+	margin: 0 !important;
+	padding: 0 8px !important;
+	border: 0 !important;
+	border-radius: 7px !important;
+	background: transparent !important;
+	color: #667a94 !important;
+	font-size: 12px !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.04em !important;
+	line-height: 1 !important;
+	text-transform: none !important;
+	box-shadow: none !important;
+	cursor: pointer !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .lh-time-ready .lh-ampm button[aria-pressed="true"] {
+	background: #d4af37 !important;
+	color: #1a1208 !important;
+	box-shadow: 0 1px 2px rgba(26, 18, 8, 0.18) !important;
+}
+
+body.lh-service-page .wpb-content-wrapper:has(form.cart) .lh-svc-form-col .lh-time-ready .lh-ampm.lh-ampm-missing {
+	border-color: #e23b3b !important;
+	box-shadow: 0 0 0 3px rgba(226, 59, 59, 0.18) !important;
 }

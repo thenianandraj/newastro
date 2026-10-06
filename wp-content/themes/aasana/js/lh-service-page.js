@@ -58,6 +58,209 @@
 		col.appendChild(wrap);
 	});
 
+	document.querySelectorAll(".lh-svc-form-col .wcpa_field_wrap").forEach(function (wrap) {
+		var label = wrap.querySelector(".wcpa_field_label, label");
+		var text = label ? (label.textContent || "").replace(/\s+/g, " ").trim().toLowerCase() : "";
+		var kind = "";
+		if (/father/.test(text)) {
+			kind = "father";
+		} else if (/gender/.test(text)) {
+			kind = "gender";
+		} else if (/date|time of birth/.test(text)) {
+			kind = "date";
+		} else if (/place/.test(text)) {
+			kind = "place";
+		} else if (/language/.test(text)) {
+			kind = "language";
+		} else if (/email/.test(text)) {
+			kind = "email";
+		} else if (/mobile|phone/.test(text)) {
+			kind = "mobile";
+		} else if (/^name\b/.test(text)) {
+			kind = "name";
+		}
+		if (kind) {
+			wrap.setAttribute("data-lh-field", kind);
+		}
+	});
+
+	document.querySelectorAll(".lh-svc-form-col .wcpa_checkbox label span:not(.wcpa_checkbox_custom)").forEach(function (span) {
+		if (span.querySelector(".lh-terms")) {
+			return;
+		}
+		var text = span.textContent || "";
+		if (!/terms/i.test(text)) {
+			return;
+		}
+		span.innerHTML = text.replace(/(terms\s*(?:&amp;|&)\s*conditions)/i, '<span class="lh-terms">$1</span>');
+	});
+
+	/**
+	 * WCPA time fields: type hh:mm and pick AM / PM inside the same box.
+	 * Drives WCPA's own flatpickr instance, so the submitted value is unchanged.
+	 */
+	function maskTime(raw, deleting) {
+		if (deleting) {
+			return raw.replace(/[^\d:]/g, "");
+		}
+		var colon = raw.indexOf(":");
+		var h;
+		var m;
+		if (colon !== -1) {
+			h = raw.slice(0, colon).replace(/\D/g, "").slice(0, 2);
+			m = raw.slice(colon + 1).replace(/\D/g, "").slice(0, 2);
+			return h + ":" + m;
+		}
+		var digits = raw.replace(/\D/g, "").slice(0, 4);
+		if (!digits || digits === "1") {
+			return digits;
+		}
+		var hourLen = digits[0] === "0" || (digits[0] === "1" && /[0-2]/.test(digits[1])) ? 2 : 1;
+		h = digits.slice(0, hourLen);
+		m = digits.slice(hourLen, hourLen + 2);
+		return h + ":" + m;
+	}
+
+	function parseTime(value) {
+		var match = /^(\d{1,2}):(\d{2})$/.exec(value);
+		if (!match) {
+			return null;
+		}
+		var h = parseInt(match[1], 10);
+		var m = parseInt(match[2], 10);
+		return h >= 1 && h <= 12 && m <= 59 ? { h: h, m: m } : null;
+	}
+
+	function enhanceTimeField(box) {
+		var native = box.querySelector("input.wcpa_field");
+		var fp = native && native._flatpickr;
+		if (!fp || box.querySelector(".lh-time-text")) {
+			return;
+		}
+
+		var fieldWrap = box.closest(".wcpa_field_wrap");
+		var label = fieldWrap && fieldWrap.querySelector(".wcpa_field_label, label");
+		var syncing = false;
+		var meridiem = "";
+
+		var text = document.createElement("input");
+		text.type = "text";
+		text.className = "lh-time-text";
+		text.inputMode = "numeric";
+		text.autocomplete = "off";
+		text.maxLength = 5;
+		text.placeholder = "hh:mm";
+		text.setAttribute("aria-label", label ? label.textContent.replace(/\s+/g, " ").replace("*", "").trim() : "Time");
+
+		var toggle = document.createElement("div");
+		toggle.className = "lh-ampm";
+		toggle.setAttribute("role", "group");
+		var buttons = {};
+		["AM", "PM"].forEach(function (value) {
+			var btn = document.createElement("button");
+			btn.type = "button";
+			btn.textContent = value;
+			btn.setAttribute("aria-pressed", "false");
+			btn.addEventListener("click", function () {
+				setMeridiem(value);
+				commit();
+			});
+			buttons[value] = btn;
+			toggle.appendChild(btn);
+		});
+
+		function setMeridiem(value) {
+			meridiem = value;
+			Object.keys(buttons).forEach(function (key) {
+				buttons[key].setAttribute("aria-pressed", key === value ? "true" : "false");
+			});
+			toggle.classList.remove("lh-ampm-missing");
+		}
+
+		function commit() {
+			var t = parseTime(text.value);
+			syncing = true;
+			if (t && meridiem) {
+				var h24 = (t.h % 12) + (meridiem === "PM" ? 12 : 0);
+				var cur = fp.selectedDates[0];
+				if (!cur || cur.getHours() !== h24 || cur.getMinutes() !== t.m) {
+					fp.setDate(new Date(2022, 0, 1, h24, t.m), true);
+				}
+			} else if (fp.selectedDates.length) {
+				fp.clear();
+			}
+			syncing = false;
+		}
+
+		function pull() {
+			var d = fp.selectedDates[0];
+			if (!d) {
+				text.value = "";
+				return;
+			}
+			setMeridiem(d.getHours() >= 12 ? "PM" : "AM");
+			text.value = (d.getHours() % 12 || 12) + ":" + ("0" + d.getMinutes()).slice(-2);
+		}
+
+		text.addEventListener("keydown", function (e) {
+			var key = (e.key || "").toLowerCase();
+			if (key === "a" || key === "p") {
+				e.preventDefault();
+				setMeridiem(key === "a" ? "AM" : "PM");
+				commit();
+			}
+		});
+
+		text.addEventListener("input", function (e) {
+			var deleting = !!e.inputType && e.inputType.indexOf("delete") === 0;
+			text.value = maskTime(text.value, deleting);
+			text.classList.remove("lh-time-invalid");
+			commit();
+		});
+
+		text.addEventListener("blur", function (e) {
+			commit();
+			var t = parseTime(text.value);
+			text.classList.toggle("lh-time-invalid", !!text.value && !t);
+			if (!toggle.contains(e.relatedTarget)) {
+				toggle.classList.toggle("lh-ampm-missing", !!t && !meridiem);
+			}
+		});
+
+		fp.config.onChange.push(function () {
+			if (!syncing) {
+				pull();
+			}
+		});
+
+		box.appendChild(text);
+		box.appendChild(toggle);
+		box.classList.add("lh-time-ready");
+		pull();
+	}
+
+	function enhanceTimeFields() {
+		document.querySelectorAll(".lh-svc-form-col .wcpa_type_time .wcpa_date_field_wrap").forEach(enhanceTimeField);
+	}
+
+	enhanceTimeFields();
+	if (window.MutationObserver) {
+		var timeQueued = false;
+		var timeObserver = new MutationObserver(function () {
+			if (timeQueued) {
+				return;
+			}
+			timeQueued = true;
+			window.requestAnimationFrame(function () {
+				timeQueued = false;
+				enhanceTimeFields();
+			});
+		});
+		document.querySelectorAll(".lh-svc-form-col").forEach(function (col) {
+			timeObserver.observe(col, { childList: true, subtree: true, attributes: true, attributeFilter: ["class"] });
+		});
+	}
+
 	/**
 	 * DEV/prod sometimes strip <a class="hr_btn"> from sample PDF links,
 	 * leaving plain "TamilEnglish" text. Rebuild gold pill links in the DOM.

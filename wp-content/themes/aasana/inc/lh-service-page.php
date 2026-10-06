@@ -196,6 +196,23 @@ html body.lh-service-page a.hr_btn1:hover {
 	background-color: #d4af37 !important;
 	color: #000b1e !important;
 }
+/* html body.lh-service-page form.cart .wcpa_field_error,
+html body.lh-service-page form.cart .wcpa_field_bottom:not(:has(.wcpa_field_price)) {
+	display: none !important;
+	height: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	overflow: hidden !important;
+}
+html body.lh-service-page form.cart .wcpa_field_wrap:has(.wcpa_field_error p) input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+html body.lh-service-page form.cart .wcpa_field_wrap:has(.wcpa_field_error p) select,
+html body.lh-service-page form.cart .wcpa_field_wrap:has(.wcpa_field_error p) textarea,
+html body.lh-service-page form.cart .wcpa_field_wrap:has(.wcpa_field_error p) input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):focus,
+html body.lh-service-page form.cart .wcpa_field_wrap:has(.wcpa_field_error p) select:focus,
+html body.lh-service-page form.cart .wcpa_field_wrap:has(.wcpa_field_error p) textarea:focus {
+	border-color: #e23b3b !important;
+	box-shadow: 0 0 0 3px rgba(226, 59, 59, 0.2) !important;
+}
 </style>
 	<?php
 }
